@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 import './AllDrinks.css';
@@ -18,15 +19,14 @@ class AllDrinks extends Component {
     }
 
     render(){
-        console.table(this.props.drinks)
         return(
             <div className='allDrinkContainer'>
                 {this.state.drinks.map((drink,id)=> {
                     return (
-                        <div className='allDrinkItem'> 
+                        <Link to='/all-drinks/show-drink' className='allDrinkItem'> 
                             <img src={drink.strDrinkThumb} alt='all drink thumbnail' />
                             <div className='allDrinkName'>{drink.strDrink}</div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

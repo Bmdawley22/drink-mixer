@@ -15,6 +15,7 @@ import RandomDrink from './components/RandomDrink';
 
 // import for API
 import axios from 'axios';
+import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
 // class base
 class App extends Component {
@@ -50,7 +51,10 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <Route path='/all-drinks' render={() => {
+        <Route path='/all-drinks/show-drink' render={() => {
+          return <AllDrinkContainer drinks={drinks}/>
+        }} />
+        <Route exact path='/all-drinks' render={() => {
           return <AllDrinks drinks={drinks}/>
         }} />
         <Route path="/random-drink" render={() => {
