@@ -1,4 +1,4 @@
-drinks = [{
+const drinks = [{
     dateModified: "2017-01-28 16:34:43",
     idDrink: "15328",
     strAlcoholic: "Alcoholic",
