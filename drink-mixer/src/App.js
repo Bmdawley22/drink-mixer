@@ -8,6 +8,8 @@ import Header from './components/Header';
 import BySpirit from './components/BySpirit';
 import AllDrinks from './components/AllDrinks/AllDrinks';
 
+import drinks from './data';
+
 // importing Random Drink
 import RandomDrink from './components/RandomDrink';
 
@@ -49,7 +51,7 @@ class App extends Component {
       <div className='App'>
         <Header />
         <Route path='/all-drinks' render={() => {
-          return <AllDrinks />
+          return <AllDrinks drinks={drinks}/>
         }} />
         <Route path="/random-drink" render={() => {
           return <RandomDrink randomDrink={this.state.randomDrink}/>
