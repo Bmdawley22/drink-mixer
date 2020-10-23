@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50vw;
+}
+nav .Link {
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+#categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.category-img {
+  object-fit: contain;
+  width: 30vw;
+}

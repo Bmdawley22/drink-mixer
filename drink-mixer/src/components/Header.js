@@ -6,10 +6,10 @@ const Header = () => {
         <header>
             <h1>Drink Mixer</h1>
             <nav>
-                <Link to='/random-drink'>Random Drink</Link>
-                <Link to='/by-spirit'>Drink By Spirit</Link>
-                <Link to='all-drinks'>All Drinks</Link>
-                <Link to='create-drink'>Create Drink</Link>
+                <Link className='Link' to='/random-drink'>Random Drink</Link>
+                <Link className='Link' to='/by-spirit'>Drink By Spirit</Link>
+                <Link className='Link' to='all-drinks'>All Drinks</Link>
+                <Link className='Link' to='create-drink'>Create Drink</Link>
             </nav>
         </header>
     )
