@@ -5,8 +5,11 @@ import React from 'react';
 const RandomDrink = (props) => {
     console.log(props)
     return (
-         <h1>Random Drink Generator</h1>
-        
+        <div>
+            <h1>Random Drink Generator</h1>
+            <h2>{props.randomDrink.strDrink}</h2>
+            <img src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+        </div>
         )
 }
 
