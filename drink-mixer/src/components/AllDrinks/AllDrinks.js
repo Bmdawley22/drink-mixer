@@ -25,6 +25,7 @@ class AllDrinks extends Component {
                     return (
                         <div className='allDrinkItem'> 
                             <img src={drink.strDrinkThumb} alt='all drink thumbnail' />
+                            <div className='allDrinkName'>{drink.strDrink}</div>
                         </div>
                     )
                 })}
