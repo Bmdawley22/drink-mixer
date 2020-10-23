@@ -13,3 +13,14 @@ nav .Link {
   border: 1px solid black;
   text-decoration: none;
 }
+
+#categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.category-img {
+  object-fit: contain;
+  width: 30vw;
+}
