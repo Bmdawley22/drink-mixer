@@ -5,6 +5,8 @@ import './App.css';
 import { Route } from 'react-router-dom';
 
 import Header from './components/Header';
+import BySpirit from './components/BySpirit';
+
 
 // importing Random Drink
 import RandomDrink from './components/RandomDrink';
@@ -49,9 +51,13 @@ class App extends Component {
         <Route path="/random-drink" render={() => {
           return <RandomDrink randomDrink={this.state.randomDrink}/>
         }} />
+        <Route path='/by-spirit' render={() => {
+          return <BySpirit />
+        }} />
       </div>
     )
   }
 }
 
 export default App;
+
