@@ -67,3 +67,13 @@
         4. Use Google Maps to find a near store or brewery
     * Styling: User friendly UI with clean layout and display
 
+
+# Components
+-   Header
+-   Footer
+-   RandomDrink
+-   ShowBySpirit
+-   AllDrinks (in state)
+-   ShowPage
+-   App
+    * All methods will live in App
