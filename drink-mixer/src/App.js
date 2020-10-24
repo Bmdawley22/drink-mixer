@@ -51,7 +51,7 @@ class App extends Component {
           return <AllDrinks />
         }} />
         <Route path="/random-drink" render={() => {
-          return <RandomDrink randomDrink={this.state.randomDrink}/>
+          return <RandomDrink randomDrink={this.state.randomDrink} />
         }} />
         <Route path='/by-spirit' render={() => {
           return <BySpirit />
