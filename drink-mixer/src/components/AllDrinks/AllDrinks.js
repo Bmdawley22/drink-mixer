@@ -23,7 +23,7 @@ class AllDrinks extends Component {
             <div className='allDrinkContainer'>
                 {this.state.drinks.map((drink,id)=> {
                     return (
-                        <Link to='/all-drinks/show-drink' className='allDrinkItem'> 
+                        <Link to={'/all-drinks/show-drink/'+ id} className='allDrinkItem'> 
                             <img src={drink.strDrinkThumb} alt='all drink thumbnail' />
                             <div className='allDrinkName'>{drink.strDrink}</div>
                         </Link>

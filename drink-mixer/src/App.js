@@ -51,8 +51,8 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <Route path='/all-drinks/show-drink' render={() => {
-          return <AllDrinkContainer drinks={drinks}/>
+        <Route path='/all-drinks/show-drink/:index' render={(props) => {
+          return <AllDrinkContainer {...props} drinks={drinks}/>
         }} />
         <Route exact path='/all-drinks' render={() => {
           return <AllDrinks drinks={drinks}/>

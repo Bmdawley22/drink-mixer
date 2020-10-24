@@ -1,9 +1,10 @@
 import React from 'react-router-dom';
 
-function AllDrinkContainer() {
+function AllDrinkContainer(props) {
+    const index=props.match.params.index;
     return(
         <div>
-            <p>This is the all drink container</p>
+            <p>{props.drinks[index].strDrink}</p>
         </div>
     )
 }
