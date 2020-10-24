@@ -20,7 +20,7 @@
     padding: 3px;
 }
 
-.allDrinkContainer {
+.allDrinkBoard {
     display: flex;
     flex-flow: row wrap;
 }

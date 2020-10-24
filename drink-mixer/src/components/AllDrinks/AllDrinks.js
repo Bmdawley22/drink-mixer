@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 
 import './AllDrinks.css';
 
@@ -20,7 +20,7 @@ class AllDrinks extends Component {
 
     render(){
         return(
-            <div className='allDrinkContainer'>
+            <div className='allDrinkBoard'>
                 {this.state.drinks.map((drink,id)=> {
                     return (
                         <Link to={'/all-drinks/show-drink/'+ id} className='allDrinkItem'> 

@@ -24,7 +24,8 @@ class App extends Component {
 
     this.state = {
       randomDrink: "",
-      apiDataError: false
+      apiDataError: false,
+      drinks: drinks
     }
   }
 
@@ -52,10 +53,10 @@ class App extends Component {
       <div className='App'>
         <Header />
         <Route path='/all-drinks/show-drink/:index' render={(props) => {
-          return <AllDrinkContainer {...props} drinks={drinks}/>
+          return <AllDrinkContainer {...props} drinks={this.state.drinks}/>
         }} />
         <Route exact path='/all-drinks' render={() => {
-          return <AllDrinks drinks={drinks}/>
+          return <AllDrinks drinks={this.state.drinks}/>
         }} />
         <Route path="/random-drink" render={() => {
           return <RandomDrink randomDrink={this.state.randomDrink}/>

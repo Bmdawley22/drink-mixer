@@ -1,0 +1,12 @@
+.allDrinkContainer {
+    display: flex;
+    flex-flow: row;
+}
+
+.AllDrinksList {
+    width: 30vw;
+}
+
+.AllDrinksShow {
+    width: 70vw;
+}
