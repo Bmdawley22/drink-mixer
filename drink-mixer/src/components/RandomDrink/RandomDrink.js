@@ -17,26 +17,26 @@ const RandomDrink = (props) => {
         measurements.push(props.randomDrink[temp]);
     }
 
-console.log(props)
-
     return (
         <div>
-            <h1>Random Drink Generator</h1>
+            <h1 className="randomDrink">Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
             <div className="drinkWrapper">
+                <h2>{props.randomDrink.strDrink}</h2>
                 <div className="drinkInfo">
-                    <h2>{props.randomDrink.strDrink}</h2>
-                    <div className="ingredient-container">Ingredients:
+                <img className="randomImage" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+                    <div className="ingredient-container">
+                        <h3>Ingredients:</h3>
                         <div className="measurements">
                             {measurements.map((measurement, id) => {
                                 return (
-                                    <div>
+                                    <div className="measure">
                                         {measurement ? <li key={id}>{measurement}</li> : null}
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className="ingredient">
+                        <div className="ingredients">
                             {ingredients.map((ingredient, id) => {
                                 return (
                                     <div>
@@ -45,10 +45,11 @@ console.log(props)
                                 )
                             })}
                         </div>
-                    </div>   
+                    </div>
+                    <br />
+                    <h3>Directions: </h3>   
                     <p>{props.randomDrink.strInstructions}</p>
                 </div>
-                <img src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
             </div>
         </div>
     )

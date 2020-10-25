@@ -3,12 +3,14 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 50vw;
 }
+
 nav .Link {
   border: 1px solid black;
   text-decoration: none;
@@ -23,4 +25,51 @@ nav .Link {
 .category-img {
   object-fit: contain;
   width: 30vw;
+}
+
+body {
+  text-align: center;
+}
+
+.drinkWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.drinkInfo {
+  display: flex;
+  flex-direction: row;
+  max-width: 350px;
+}
+
+.ingredient-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 650px;
+}
+
+.measurements {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.ingredients {
+  list-style: none;
+  padding-left: 10px;
+  text-align: center;
+}
+
+h3 {
+  height: 50px;
+}
+
+.measure {
+  flex-wrap: wrap;
+}
+
+.randomImage {
+  width: 300px;
+  height: auto;
+  align-self: flex-start;
 }
