@@ -9,7 +9,7 @@ import BySpirit from './components/BySpirit';
 import AllDrinks from './components/AllDrinks/AllDrinks';
 
 // importing Random Drink
-import RandomDrink from './components/RandomDrink';
+import RandomDrink from './components/RandomDrink/RandomDrink';
 
 // import for API
 import axios from 'axios';
