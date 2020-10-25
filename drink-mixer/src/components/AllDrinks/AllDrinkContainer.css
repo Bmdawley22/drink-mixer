@@ -10,3 +10,7 @@
 .AllDrinksShow {
     width: 70vw;
 }
+
+.active {
+    background-color: grey;
+}

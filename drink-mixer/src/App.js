@@ -25,9 +25,18 @@ class App extends Component {
     this.state = {
       randomDrink: "",
       apiDataError: false,
-      drinks: drinks
+      drinks: drinks,
+      allDrinksActiveDrink:null
     }
   }
+
+  setActive = (id) => {
+    const allDrinksActiveDrink=id;
+    this.setState({
+      allDrinksActiveDrink:allDrinksActiveDrink
+    })
+  }
+
 
   // Random Drink API call
   async componentDidMount() {
@@ -53,10 +62,10 @@ class App extends Component {
       <div className='App'>
         <Header />
         <Route path='/all-drinks/show-drink/:index' render={(props) => {
-          return <AllDrinkContainer {...props} drinks={this.state.drinks}/>
+          return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
         }} />
         <Route exact path='/all-drinks' render={() => {
-          return <AllDrinks drinks={this.state.drinks}/>
+          return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
         }} />
         <Route path="/random-drink" render={() => {
           return <RandomDrink randomDrink={this.state.randomDrink}/>
