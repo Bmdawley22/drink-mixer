@@ -17,9 +17,12 @@ const RandomDrink = (props) => {
         measurements.push(props.randomDrink[temp]);
     }
 
+console.log(props)
+
     return (
         <div>
             <h1>Random Drink Generator</h1>
+            <button onClick={props.onClick}>Random Drink</button>
             <div className="drinkWrapper">
                 <div className="drinkInfo">
                     <h2>{props.randomDrink.strDrink}</h2>
