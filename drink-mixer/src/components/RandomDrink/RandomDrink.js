@@ -23,10 +23,12 @@ console.log(props)
         <div>
             <h1>Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
+            <h2>{props.randomDrink.strDrink}</h2>
             <div className="drinkWrapper">
                 <div className="drinkInfo">
-                    <h2>{props.randomDrink.strDrink}</h2>
-                    <div className="ingredient-container">Ingredients:
+                    <img className="randomDrink" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+                    <div className="ingredient-container">
+                        <h3>Ingredients: </h3>
                         <div className="measurements">
                             {measurements.map((measurement, id) => {
                                 return (
@@ -45,11 +47,12 @@ console.log(props)
                                 )
                             })}
                         </div>
-                    </div>   
+                    </div>
+                    <h3>Directions: </h3>   
                     <p>{props.randomDrink.strInstructions}</p>
                 </div>
-                <img src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
             </div>
+            <button>Add Drink</button>
         </div>
     )
 }
