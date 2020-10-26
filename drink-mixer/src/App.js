@@ -40,9 +40,24 @@ class App extends Component {
 
   // adding Random Drink to All Drinks list
   addRandomDrink = () => {
-    const drinks = this.state.drinks
-    const message = "Random Drink is added to All Drinks List"
-    drinks.push(this.state.randomDrink)
+    let message;
+    let drinks;
+
+    // creating a new array of drink ids in the current data list
+    let idArray = this.state.drinks.map((drink, id) => {
+      return drink.idDrink
+    })
+
+    // if the current list of drink id's include the random drink id, will not add that drink to the list
+    //    else add the random drink to the all drinks list
+    if (idArray.includes(this.state.randomDrink.idDrink)) {
+      message = "Drink is already in All Drinks List"
+      drinks = this.state.drinks
+    } else {
+      drinks = this.state.drinks
+      message = "Random Drink is added to All Drinks List"
+      drinks.push(this.state.randomDrink)
+    }
 
     this.setState({
       drinks,
