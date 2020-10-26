@@ -28,7 +28,8 @@ class App extends Component {
       randomDrink: "",
       apiDataError: false,
       drinks: drinks,
-      allDrinksActiveDrink:null,
+      allDrinksActiveDrink: null,
+      message: "",
       bySpiritActiveDrink:0,
       bySpiritDrinks: []
     }
@@ -42,6 +43,7 @@ class App extends Component {
       bySpiritActiveDrink: bySpiritActiveDrink
     })
   }
+  
   BySpiritCall = async (cat) => {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
     console.log(resp.data.drinks)
@@ -51,6 +53,44 @@ class App extends Component {
     })
   }
 
+  // adding Random Drink to All Drinks list
+  addRandomDrink = () => {
+    let message;
+    let drinks;
+
+    // creating a new array of drink ids in the current data list
+    let idArray = this.state.drinks.map((drink, id) => {
+      return drink.idDrink
+    })
+
+    // if the current list of drink id's include the random drink id, will not add that drink to the list
+    //    else add the random drink to the all drinks list
+    if (idArray.includes(this.state.randomDrink.idDrink)) {
+      message = "Drink is already in All Drinks List"
+      drinks = this.state.drinks
+    } else {
+      drinks = this.state.drinks
+      message = "Random Drink is added to All Drinks List"
+      drinks.push(this.state.randomDrink)
+    }
+
+    this.setState({
+      drinks,
+      message
+    }) 
+
+    // call the reset message function to timeout after 3 seconds of being displayed to the user
+    setTimeout(this.resetMessage, 3000);
+  }
+
+  // reset message after 3 seconds of message being displayed
+  resetMessage = () => {
+    const message = ""
+    
+    this.setState({
+      message
+    })
+  }
 
   // Random Drink API call
   async componentDidMount() {
@@ -80,7 +120,12 @@ class App extends Component {
           return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
         }} />
         <Route path="/random-drink" render={() => {
-          return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()}/>
+          return <RandomDrink 
+            randomDrink={this.state.randomDrink} 
+            onClick={() => this.componentDidMount()} 
+            addRandomDrink={this.addRandomDrink} 
+            message={this.state.message}
+          />
         }} />
         <Route path='/by-spirit/show-drink/:index' render={(props) => {
           return <BySpiritContainer drinks={this.state.bySpiritDrinks} setActive={this.setActive} bySpiritActiveDrink={this.state.bySpiritActiveDrink}/>
