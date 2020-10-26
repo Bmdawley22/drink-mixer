@@ -27,10 +27,6 @@ nav .Link {
   width: 30vw;
 }
 
-body {
-  text-align: center;
-}
-
 .drinkWrapper {
   display: flex;
   flex-direction: column;

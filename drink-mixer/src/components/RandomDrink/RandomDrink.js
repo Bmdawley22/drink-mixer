@@ -21,7 +21,6 @@ const RandomDrink = (props) => {
         <div>
             <h1 className="randomDrink">Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
-            <h2>{props.randomDrink.strDrink}</h2>
             <div className="drinkWrapper">
                 <h2>{props.randomDrink.strDrink}</h2>
                 <div className="drinkInfo">
