@@ -27,6 +27,7 @@ class AllDrinks extends Component {
                             to={'/all-drinks/show-drink/'+ id} 
                             className='allDrinkItem'
                             onClick={()=> this.props.setActive(id)}
+                            key={id}
                         > 
                             <img src={drink.strDrinkThumb} alt='all drink thumbnail' />
                             <div className='allDrinkName'>{drink.strDrink}</div>

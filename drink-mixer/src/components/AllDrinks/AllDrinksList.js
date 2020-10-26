@@ -10,6 +10,7 @@ function AllDrinkList(props) {
                     <Link 
                         to={'/all-drinks/show-drink/'+id}
                         onClick={()=> props.setActive(id)}
+                        key={id}
                     >
                         <div className={props.allDrinksActiveDrink===id ? "active" : ""}> 
                             <img src={drink.strDrinkThumb} alt='thumbnail' className='thumbnail'/>
