@@ -12,16 +12,19 @@ class CreateDrink extends Component {
         }
     }
 
+    // changing the state based on the user's input values
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
+    // adding additional input boxes for the ingredients if needed on button click
     addIngredient = () => {
-        let ingredientsNum=this.state.ingredientsNum;
-        if (ingredientsNum.length<15) {
-            ingredientsNum.push(`strIngredient${ingredientsNum.length+1}`)
+        let ingredientsNum = this.state.ingredientsNum;
+        if (ingredientsNum.length < 15) {
+            ingredientsNum.push(`strIngredient${ingredientsNum.length + 1}`)
+
             this.setState({
                 ingredientsNum
             })

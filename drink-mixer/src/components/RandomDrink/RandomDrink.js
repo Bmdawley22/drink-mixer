@@ -20,12 +20,6 @@ const RandomDrink = (props) => {
         measurements.push(props.randomDrink[temp]);
     }
 
-
-    // creating a message to let user know random drink was added to all drinks list
-    const displayMessage = () => {
-        console.log("Hello")
-    }
-
     return (
         <div className="randomDrinkContainer">
             <h1 className="randomDrink">Random Drink Generator</h1>

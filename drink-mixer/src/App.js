@@ -2,11 +2,10 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import { Route,Switch, withRouter } from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 
 import Header from './components/Header';
-import BySpirit from './components/BySpirit';
-import AllDrinks from './components/AllDrinks/AllDrinks';
+
 import CreateDrink from './components/CreateDrink/CreateDrink';
 
 import BySpirit from './components/BySpirit/BySpirit';
@@ -38,18 +37,21 @@ class App extends Component {
     }
   }
 
+  // setting the active tab for the list page
   setActive = (id) => {
-    const allDrinksActiveDrink=id;
-    const bySpiritActiveDrink=id;
+    const allDrinksActiveDrink = id;
+    const bySpiritActiveDrink = id;
+
     this.setState({
       allDrinksActiveDrink: allDrinksActiveDrink,
       bySpiritActiveDrink: bySpiritActiveDrink
     })
   }
   
+  // calling the API by spirit category
   BySpiritCall = async (cat) => {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
-    console.log(resp.data.drinks)
+
     this.setState({ 
       bySpiritDrinks: resp.data.drinks,
       bySpiritActiveDrink: 0
@@ -94,16 +96,20 @@ class App extends Component {
       message
     })
   }
+
+  // creating a new drink and adding to state to be displayed in All Drinks
   createDrink= (e, newDrink) => {
     e.preventDefault();
     const drinks=this.state.drinks;
     drinks.push(newDrink);
+
     this.setState({
       drinks
     })
+
+    // rendering to All Drinks page after submitting
     this.props.history.push('/all-drinks');
   }
-
 
   // Random Drink API call
   async componentDidMount() {
@@ -127,29 +133,41 @@ class App extends Component {
       <div className='App'>
         <Header />
         <Switch>
-        <Route path='/all-drinks/show-drink/:index' render={(props) => {
-          return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
-        }} />
-        <Route exact path='/all-drinks' render={() => {
-          return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
-        }} />
-        <Route path="/random-drink" render={() => {
-          return <RandomDrink 
-            randomDrink={this.state.randomDrink} 
-            onClick={() => this.componentDidMount()} 
-            addRandomDrink={this.addRandomDrink} 
-            message={this.state.message}
-          />
-        }} />
-        <Route path='/by-spirit/show-drink/:index' render={(props) => {
-          return <BySpiritContainer drinks={this.state.bySpiritDrinks} setActive={this.setActive} bySpiritActiveDrink={this.state.bySpiritActiveDrink}/>
-        }} />
-        <Route exact path='/by-spirit' render={() => {
-          return <BySpirit BySpiritCall={this.BySpiritCall}/>
-        }} />
-        <Route path='/create-drink' render={() => {
+          <Route path='/all-drinks/show-drink/:index' render={(props) => {
+            return <AllDrinkContainer 
+              {...props} 
+              drinks={this.state.drinks} 
+              setActive={this.setActive} 
+              allDrinksActiveDrink={this.state.allDrinksActiveDrink}
+            />
+          }} />
+          <Route exact path='/all-drinks' render={() => {
+            return <AllDrinks 
+              drinks={this.state.drinks} 
+              setActive={this.setActive}
+            />
+          }} />
+          <Route path="/random-drink" render={() => {
+            return <RandomDrink 
+              randomDrink={this.state.randomDrink} 
+              onClick={() => this.componentDidMount()} 
+              addRandomDrink={this.addRandomDrink} 
+              message={this.state.message}
+            />
+          }} />
+          <Route path='/by-spirit/show-drink/:index' render={(props) => {
+            return <BySpiritContainer 
+              drinks={this.state.bySpiritDrinks} 
+              setActive={this.setActive} 
+              bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+            />
+          }} />
+          <Route exact path='/by-spirit' render={() => {
+            return <BySpirit BySpiritCall={this.BySpiritCall}/>
+          }} />
+          <Route path='/create-drink' render={() => {
             return <CreateDrink createDrink={this.createDrink}/>
-        }} />
+          }} />
         </Switch>
       </div>
     )
