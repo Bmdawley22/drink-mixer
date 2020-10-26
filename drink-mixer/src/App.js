@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import { Route,Switch } from 'react-router-dom';
+import { Route,Switch, withRouter } from 'react-router-dom';
 
 import Header from './components/Header';
 import BySpirit from './components/BySpirit';
@@ -36,6 +36,16 @@ class App extends Component {
     this.setState({
       allDrinksActiveDrink:allDrinksActiveDrink
     })
+  }
+
+  createDrink= (e, newDrink) => {
+    e.preventDefault();
+    const drinks=this.state.drinks;
+    drinks.push(newDrink);
+    this.setState({
+      drinks
+    })
+    this.props.history.push('/all-drinks');
   }
 
 
@@ -74,12 +84,14 @@ class App extends Component {
           <Route path='/by-spirit' render={() => {
             return <BySpirit />
           }} />
-          <Route path='/create-drink' component={CreateDrink}/>
+          <Route path='/create-drink' render={() => {
+            return <CreateDrink createDrink={this.createDrink}/>
+          }} />
         </Switch>
       </div>
     )
   }
 }
 
-export default App;
+export default withRouter(App);
 
