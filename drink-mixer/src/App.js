@@ -2,11 +2,12 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route,Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import BySpirit from './components/BySpirit';
 import AllDrinks from './components/AllDrinks/AllDrinks';
+import CreateDrink from './components/CreateDrink/CreateDrink';
 
 import drinks from './data';
 
@@ -60,18 +61,21 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <Route path='/all-drinks/show-drink/:index' render={(props) => {
-          return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
-        }} />
-        <Route exact path='/all-drinks' render={() => {
-          return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
-        }} />
-        <Route path="/random-drink" render={() => {
-          return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()}/>
-        }} />
-        <Route path='/by-spirit' render={() => {
-          return <BySpirit />
-        }} />
+        <Switch>
+          <Route path='/all-drinks/show-drink/:index' render={(props) => {
+            return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
+          }} />
+          <Route exact path='/all-drinks' render={() => {
+            return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
+          }} />
+          <Route path="/random-drink" render={() => {
+            return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()}/>
+          }} />
+          <Route path='/by-spirit' render={() => {
+            return <BySpirit />
+          }} />
+          <Route path='/create-drink' component={CreateDrink}/>
+        </Switch>
       </div>
     )
   }
