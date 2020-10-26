@@ -405,3 +405,5 @@ const drinks = [{
     strVideo: null,
 }
 ]
+
+export default drinks;

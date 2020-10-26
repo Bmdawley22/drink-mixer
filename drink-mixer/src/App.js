@@ -8,11 +8,14 @@ import Header from './components/Header';
 import BySpirit from './components/BySpirit';
 import AllDrinks from './components/AllDrinks/AllDrinks';
 
+import drinks from './data';
+
 // importing Random Drink
 import RandomDrink from './components/RandomDrink/RandomDrink';
 
 // import for API
 import axios from 'axios';
+import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
 // class base
 class App extends Component {
@@ -21,9 +24,19 @@ class App extends Component {
 
     this.state = {
       randomDrink: "",
-      apiDataError: false
+      apiDataError: false,
+      drinks: drinks,
+      allDrinksActiveDrink:null
     }
   }
+
+  setActive = (id) => {
+    const allDrinksActiveDrink=id;
+    this.setState({
+      allDrinksActiveDrink:allDrinksActiveDrink
+    })
+  }
+
 
   // Random Drink API call
   async componentDidMount() {
@@ -47,8 +60,11 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <Route path='/all-drinks' render={() => {
-          return <AllDrinks />
+        <Route path='/all-drinks/show-drink/:index' render={(props) => {
+          return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
+        }} />
+        <Route exact path='/all-drinks' render={() => {
+          return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
         }} />
         <Route path="/random-drink" render={() => {
           return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()}/>
