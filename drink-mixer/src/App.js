@@ -2,9 +2,12 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route,Switch, withRouter } from 'react-router-dom';
 
 import Header from './components/Header';
+import BySpirit from './components/BySpirit';
+import AllDrinks from './components/AllDrinks/AllDrinks';
+import CreateDrink from './components/CreateDrink/CreateDrink';
 
 import BySpirit from './components/BySpirit/BySpirit';
 import BySpiritContainer from './components/BySpirit/BySpiritContainer';
@@ -91,6 +94,16 @@ class App extends Component {
       message
     })
   }
+  createDrink= (e, newDrink) => {
+    e.preventDefault();
+    const drinks=this.state.drinks;
+    drinks.push(newDrink);
+    this.setState({
+      drinks
+    })
+    this.props.history.push('/all-drinks');
+  }
+
 
   // Random Drink API call
   async componentDidMount() {
@@ -113,6 +126,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+        <Switch>
         <Route path='/all-drinks/show-drink/:index' render={(props) => {
           return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
         }} />
@@ -133,10 +147,14 @@ class App extends Component {
         <Route exact path='/by-spirit' render={() => {
           return <BySpirit BySpiritCall={this.BySpiritCall}/>
         }} />
+        <Route path='/create-drink' render={() => {
+            return <CreateDrink createDrink={this.createDrink}/>
+        }} />
+        </Switch>
       </div>
     )
   }
 }
 
-export default App;
+export default withRouter(App);
 
