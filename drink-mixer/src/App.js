@@ -9,7 +9,7 @@ import BySpirit from './components/BySpirit';
 import AllDrinks from './components/AllDrinks/AllDrinks';
 
 // importing Random Drink
-import RandomDrink from './components/RandomDrink';
+import RandomDrink from './components/RandomDrink/RandomDrink';
 
 // import for API
 import axios from 'axios';
@@ -41,7 +41,6 @@ class App extends Component {
         apiDataError: true
       })
     }
-
   }
 
   render () {
@@ -52,7 +51,7 @@ class App extends Component {
           return <AllDrinks />
         }} />
         <Route path="/random-drink" render={() => {
-          return <RandomDrink randomDrink={this.state.randomDrink}/>
+          return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()}/>
         }} />
         <Route path='/by-spirit' render={() => {
           return <BySpirit />
