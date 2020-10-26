@@ -1,6 +1,9 @@
 // import React 
 import React from 'react';
 
+// import Random drink styling page
+import './RandomDrink.css';
+
 // function base
 const RandomDrink = (props) => {
     // creating a new array for just the ingredients in each random drink
@@ -18,29 +21,29 @@ const RandomDrink = (props) => {
     }
 
     return (
-        <div>
+        <div className="randomDrinkContainer">
             <h1 className="randomDrink">Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
+            <h2>{props.randomDrink.strDrink}</h2>
             <div className="drinkWrapper">
-                <h2>{props.randomDrink.strDrink}</h2>
-                <div className="drinkInfo">
                 <img className="randomImage" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+                <div>
+                <h3>Ingredients:</h3>
                     <div className="ingredient-container">
-                        <h3>Ingredients:</h3>
                         <div className="measurements">
                             {measurements.map((measurement, id) => {
                                 return (
-                                    <div className="measure">
-                                        {measurement ? <li key={id}>{measurement}</li> : null}
+                                    <div className="measure" key={id}>
+                                        {measurement ? <li >- {measurement}</li> : null}
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className="ingredients">
+                        <div className="ingredient">
                             {ingredients.map((ingredient, id) => {
                                 return (
-                                    <div>
-                                        {ingredient ? <li key={id}>{ingredient}</li> : null}
+                                    <div key={id}>
+                                        {ingredient ? <li >{ingredient}</li> : null}
                                     </div>
                                 )
                             })}

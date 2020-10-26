@@ -44,7 +44,6 @@ class App extends Component {
 
     try {
       const response = await axios(URL);
-      console.log(response);
 
       this.setState({
         randomDrink: response.data.drinks[0]

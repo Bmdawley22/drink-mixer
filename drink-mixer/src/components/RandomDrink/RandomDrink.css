@@ -1,0 +1,44 @@
+.randomDrinkContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.drinkWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 800px;
+}
+
+.ingredient-container {
+    display: flex;
+    flex-flow: row;
+}
+
+h3 {
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.ingredient {
+    list-style: none;
+    padding-left: 8px;
+}
+
+.measure {
+    list-style: none;
+    padding-left: 10px;
+}
+
+p {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+  
+.randomImage {
+    width: 300px;
+    height: auto;
+    align-self: flex-start;
+}
