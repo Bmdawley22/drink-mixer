@@ -5,18 +5,20 @@ import './App.css';
 import { Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import BySpirit from './components/BySpirit';
-import AllDrinks from './components/AllDrinks/AllDrinks';
 
-import drinks from './data';
+import BySpirit from './components/BySpirit/BySpirit';
+import BySpiritContainer from './components/BySpirit/BySpiritContainer';
+
+import AllDrinks from './components/AllDrinks/AllDrinks';
+import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
 // importing Random Drink
 import RandomDrink from './components/RandomDrink/RandomDrink';
 
 // import for API
 import axios from 'axios';
-import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
+import drinks from './data';
 // class base
 class App extends Component {
   constructor(props) {
@@ -27,14 +29,27 @@ class App extends Component {
       apiDataError: false,
       drinks: drinks,
       allDrinksActiveDrink: null,
-      message: ""
+      message: "",
+      bySpiritActiveDrink:0,
+      bySpiritDrinks: []
     }
   }
 
   setActive = (id) => {
-    const allDrinksActiveDrink = id;
+    const allDrinksActiveDrink=id;
+    const bySpiritActiveDrink=id;
     this.setState({
-      allDrinksActiveDrink: allDrinksActiveDrink
+      allDrinksActiveDrink: allDrinksActiveDrink,
+      bySpiritActiveDrink: bySpiritActiveDrink
+    })
+  }
+  
+  BySpiritCall = async (cat) => {
+    const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
+    console.log(resp.data.drinks)
+    this.setState({ 
+      bySpiritDrinks: resp.data.drinks,
+      bySpiritActiveDrink: 0
     })
   }
 
@@ -112,8 +127,11 @@ class App extends Component {
             message={this.state.message}
           />
         }} />
-        <Route path='/by-spirit' render={() => {
-          return <BySpirit />
+        <Route path='/by-spirit/show-drink/:index' render={(props) => {
+          return <BySpiritContainer drinks={this.state.bySpiritDrinks} setActive={this.setActive} bySpiritActiveDrink={this.state.bySpiritActiveDrink}/>
+        }} />
+        <Route exact path='/by-spirit' render={() => {
+          return <BySpirit BySpiritCall={this.BySpiritCall}/>
         }} />
       </div>
     )

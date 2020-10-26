@@ -19,11 +19,21 @@ class BySpirit extends Component {
         }
     }
 
+    handleClick = (id) => {
+        const category = this.state.categories[id].name;
+        this.props.BySpiritCall(category);
+         
+    }
+  
+
     render() {
         return (
             <div id='categories-wrapper' >
                 {this.state.categories.map((category, id) => (
-                    <Link to='/show'>
+                    <Link 
+                        onClick={() => this.handleClick(id)} key={id}
+                        to='/by-spirit/show-drink/0'
+                    >
                          <img
                             className='category-img'
                             src={category.img} 
@@ -33,8 +43,7 @@ class BySpirit extends Component {
                          <h3>{category.name}</h3>
                     </Link>
                 ))}
-            </div>
-            
+            </div> 
         )
     }
 }
