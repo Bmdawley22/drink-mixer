@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 class BySpirit extends Component {
     constructor(props) {
@@ -22,19 +21,19 @@ class BySpirit extends Component {
 
     handleClick = (id) => {
         const category = this.state.categories[id].name;
-        this.APIcall(category);
+        this.props.BySpiritCall(category);
+         
     }
-    APIcall = async (cat) => {
-        console.log(cat);
-        const drinks = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
-        console.log(drinks.data);
-    }
+  
 
     render() {
         return (
             <div id='categories-wrapper' >
                 {this.state.categories.map((category, id) => (
-                    <div onClick={() => this.handleClick(id)} key={id}>
+                    <Link 
+                        onClick={() => this.handleClick(id)} key={id}
+                        to='/by-spirit/show-drink/0'
+                    >
                          <img
                             className='category-img'
                             src={category.img} 
@@ -42,7 +41,7 @@ class BySpirit extends Component {
                             key={id}
                         />
                          <h3>{category.name}</h3>
-                    </div>
+                    </Link>
                 ))}
             </div> 
         )
