@@ -27,27 +27,36 @@ nav .Link {
   width: 30vw;
 }
 
+body {
+  text-align: center;
+}
+
 .drinkWrapper {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 500px;
-  text-align: center;
+  max-width: 500px;
 }
 
 .drinkInfo {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 500px;
-  text-align: center;
+  flex-direction: row;
+  max-width: 350px;
 }
 
 .ingredient-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 500px;
+  flex-direction: row;
+  max-width: 650px;
+}
+
+.measurements {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.ingredients {
+  list-style: none;
+  padding-left: 10px;
   text-align: center;
 }
 
@@ -55,22 +64,12 @@ h3 {
   height: 50px;
 }
 
-.measurements {
-  margin-left: 10px;
-  text-align: center; 
+.measure {
+  flex-wrap: wrap;
 }
 
-.ingredient {
-  list-style: none;
-  padding-left: 10px;
-  text-align: center;
-}
-
-.randomDrink {
-  width: 400px;
+.randomImage {
+  width: 300px;
   height: auto;
-}
-
-body {
-  text-align: center;
+  align-self: flex-start;
 }

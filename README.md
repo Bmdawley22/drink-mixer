@@ -1,13 +1,25 @@
 # Project 3: Building a ReactJS Application
 
-## Title: Drink-mixer
+## Drink-mixer
 
 ## Description: 
-
-### Objective: 
 * Create an app for a user to explore all of their favorite drinks.  The user will be able to find a random drink, find a drink by certain ingredients, rate and comment on drinks, and create and add a drink locally. 
 
-## Wireframes:
+## Table of Contents
+* Wireframe
+* Flow Diagram
+* App
+* Features
+* Future Additions
+* API Used
+* Languages Used
+* Packages/Libraries
+* Contribute
+* Issue and Resolutions
+* Submit a Ticket
+* Resources
+
+## Wireframe
 * All Drinks: <br />
 ![alt text](https://github.com/Bmdawley22/drink-mixer/blob/main/Images/AllDrinks.png)
 
@@ -33,47 +45,60 @@
 
 * See Images Folder: SpiritShowDrink.png
 
-## API URL: 
+## Flow Diagram
 
-* https://www.thecocktaildb.com/api.php
+## App
 
-## MVP Goals:
+## Features
 
-* Bronze:
-    * Minimum Goals:
-        1. Navigation bar to easily navigate through the app. 
-        2. Use random drink API.
-        3. Component to display the random drink to the user.
-        4. User able to search for a drink by ingredients.
-        5. List drinks to user that meet search criteria
-        6. Clean organized file names
-    * Styling: Plain background with flex styling
+## Future Additions
 
-* Silver:
-    * Nice to Have:
-        1. List of categories of drinks
-        2. Drink instruction component
-            * Display Image of Drink
-            * Display Instructions
-            * Display Direction
-        3. Add a Drink
-    * Styling: Create hover ability to show a dropdown to select different drink categories
+## API Used
 
-* Gold:
-    * High Goal:
-        1. Add likes to a drink
-        2. Add comments to a drink
-        3. Add a database to store comments and likes
-        4. Use Google Maps to find a near store or brewery
-    * Styling: User friendly UI with clean layout and display
+- **TheCocktailDB:** https://www.thecocktaildb.com/api.php
 
+## Languages Used
+* HTML
+* CSS
+* JavaScript
+* React
 
-# Components
--   Header
--   Footer
--   RandomDrink
--   ShowBySpirit
--   AllDrinks (in state)
--   ShowPage
--   App
-    * All methods will live in App
+## Packages/Libraries
+* React Router
+* React Router Dom
+* Axios
+
+## Contribute
+- **Source Code:** https://github.com/Bmdawley22/drink-mixer
+
+## Issue and Resolutions
+### Issue
+### Resolution
+
+## Submit a Ticket
+* If a problem occurs with the Drink Mixer or have suggestions for updates, please add them here: 
+https://github.com/Bmdawley22/drink-mixer/issues
+
+- **Notes:** Responses can take up to 48 hours. Thank you for mixing!
+
+## Resources
+* Contributors:
+    - Andrea Bonetto
+    - Brady Dawley
+    - Tim Kaiser
+* API:
+    - https://www.thecocktaildb.com/api.php
+* Websites:
+    - **ReactJS** https://reactjs.org
+    - **w3schools** https://www.w3schools.com/
+    - **MDN web docs** https://developer.mozilla.org/en-US/
+    - **stackoverflow** https://stackoverflow.com/
+    - **GeeksforGeeks** https://www.geeksforgeeks.org
+    - **GitHub Docs** https://docs.github.com/en
+    - **Google Fonts** https://fonts.google.com/
+    - **CSS-TRICKS** https://css-tricks.com/
+* Instructors: 
+    - Casey R Harding
+    - David Magbee
+    - Isha Arora
+* SEI Classmates

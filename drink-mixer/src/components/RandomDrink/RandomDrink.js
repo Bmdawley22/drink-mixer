@@ -17,28 +17,27 @@ const RandomDrink = (props) => {
         measurements.push(props.randomDrink[temp]);
     }
 
-console.log(props)
-
     return (
         <div>
-            <h1>Random Drink Generator</h1>
+            <h1 className="randomDrink">Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
             <h2>{props.randomDrink.strDrink}</h2>
             <div className="drinkWrapper">
+                <h2>{props.randomDrink.strDrink}</h2>
                 <div className="drinkInfo">
-                    <img className="randomDrink" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+                <img className="randomImage" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
                     <div className="ingredient-container">
-                        <h3>Ingredients: </h3>
+                        <h3>Ingredients:</h3>
                         <div className="measurements">
                             {measurements.map((measurement, id) => {
                                 return (
-                                    <div>
+                                    <div className="measure">
                                         {measurement ? <li key={id}>{measurement}</li> : null}
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className="ingredient">
+                        <div className="ingredients">
                             {ingredients.map((ingredient, id) => {
                                 return (
                                     <div>
@@ -48,6 +47,7 @@ console.log(props)
                             })}
                         </div>
                     </div>
+                    <br />
                     <h3>Directions: </h3>   
                     <p>{props.randomDrink.strInstructions}</p>
                 </div>
