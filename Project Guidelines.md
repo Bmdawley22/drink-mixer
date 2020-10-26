@@ -41,11 +41,11 @@
 
 * Bronze:
     * Minimum Goals:
-        1. Navigation bar to easily navigate through the app. 
-        2. Use random drink API.
-        3. Component to display the random drink to the user.
-        4. User able to search for a drink by ingredients.
-        5. List drinks to user that meet search criteria
+        1. Navigation bar to easily navigate through the app
+        2. Use random drink API
+        3. Component to display the random drink to the user
+        4. User able to select a drink by ingredients (pintrest board view)
+        5. List drinks to user that meet selected ingredient criteria
         6. Clean organized file names
     * Styling: Plain background with flex styling
 
