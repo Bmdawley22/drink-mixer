@@ -16,7 +16,7 @@ function AllDrinksShow(props) {
     }
     return(
         <div className='AllDrinksShow'>
-            <img src={props.drink.strDrinkThumb} alt='thumbnail'/>
+            <img src={props.drink.strDrinkThumb} alt='showDrinkImg' className='showDrinkImg' />
             <h1>{props.drink.strDrink}</h1>
             <h2>Ingredients</h2>
             <div className='ingredientContainer'>
