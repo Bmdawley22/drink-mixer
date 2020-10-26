@@ -26,7 +26,8 @@ class App extends Component {
       randomDrink: "",
       apiDataError: false,
       drinks: drinks,
-      allDrinksActiveDrink: null
+      allDrinksActiveDrink: null,
+      message: ""
     }
   }
 
@@ -40,10 +41,24 @@ class App extends Component {
   // adding Random Drink to All Drinks list
   addRandomDrink = () => {
     const drinks = this.state.drinks
+    const message = "Random Drink is added to All Drinks List"
     drinks.push(this.state.randomDrink)
 
     this.setState({
-      drinks
+      drinks,
+      message
+    }) 
+
+    // call the reset message function to timeout after 3 seconds of being displayed to the user
+    setTimeout(this.resetMessage, 3000);
+  }
+
+  // reset message after 3 seconds of message being displayed
+  resetMessage = () => {
+    const message = ""
+    
+    this.setState({
+      message
     })
   }
 
@@ -75,7 +90,12 @@ class App extends Component {
           return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
         }} />
         <Route path="/random-drink" render={() => {
-          return <RandomDrink randomDrink={this.state.randomDrink} onClick={() => this.componentDidMount()} addRandomDrink={this.addRandomDrink}/>
+          return <RandomDrink 
+            randomDrink={this.state.randomDrink} 
+            onClick={() => this.componentDidMount()} 
+            addRandomDrink={this.addRandomDrink} 
+            message={this.state.message}
+          />
         }} />
         <Route path='/by-spirit' render={() => {
           return <BySpirit />
