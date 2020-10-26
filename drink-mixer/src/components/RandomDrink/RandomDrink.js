@@ -54,7 +54,7 @@ const RandomDrink = (props) => {
                     <p>{props.randomDrink.strInstructions}</p>
                 </div>
             </div>
-            <button>Add Drink</button>
+            <button onClick={() => props.addRandomDrink()}>Add Drink</button>
         </div>
     )
 }
