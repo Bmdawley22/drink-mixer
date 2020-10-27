@@ -1,9 +1,6 @@
 // import React 
 import React from 'react';
 
-// import Random drink styling page
-import './RandomDrink.css';
-
 // function base
 const RandomDrink = (props) => {
     // creating a new array for just the ingredients in each random drink
@@ -25,21 +22,21 @@ const RandomDrink = (props) => {
             <h1 className='randomDrink'>Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
             <h2>{props.randomDrink.strDrink}</h2>
-            <div className='drinkWrapper'>
+            <div className='randomDrinkWrapper'>
                 <img className='randomImage' src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
                 <div>
                 <h3>Ingredients:</h3>
-                    <div className='ingredient-container'>
+                    <div className='random-ingredient-container'>
                         <div className='measurements'>
                             {measurements.map((measurement, id) => {
                                 return (
-                                    <div className='measure' key={id}>
+                                    <div className='randomMeasure' key={id}>
                                         {measurement ? <li >- {measurement}</li> : null}
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className='ingredient'>
+                        <div className='randomIngredient'>
                             {ingredients.map((ingredient, id) => {
                                 return (
                                     <div key={id}>
