@@ -7,6 +7,13 @@ header {
   justify-content: space-between;
   align-items: center;
   font-family: Bitter, Arial, sans-serif;
+  background-color: #E0ECE4;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+header h1 {
+  margin: 0px;
 }
 
 nav {
@@ -17,8 +24,12 @@ nav {
 }
 
 nav .Link {
-  border: 1px solid black;
   text-decoration: none;
+  background-color: #797A7E;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 #categories-wrapper {
@@ -32,28 +43,11 @@ nav .Link {
   width: 30vw;
 }
 
-.Footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.issue {
-  color: black;
-  font-size: 15px;
-  text-decoration: none;
-  text-align: left;
-}
-
-footer {
-  font-family: Shadows Into Light, Arial, sans-serif;
-  font-size: 15px;
-  text-align: right;
-}
-
 .ingredientContainer {
   display: flex;
   height: 25vh;
   overflow-y: auto;
+  padding-right: 5px;
 }
 
 .drinkWrapper {
@@ -80,12 +74,13 @@ footer {
   display: flex;
   flex-flow: row;
   align-items: center;
+  margin-top: 10px;
 }
 
 .drinksList {
   width: 30vw;
   height: 85vh;
-  overflow-y:auto;
+  overflow-y: auto;
   border: solid #797a7e 5px;
   margin-left: 10px;
   display: flex;
@@ -102,7 +97,6 @@ footer {
   display: flex;
   flex-flow: row;
   align-items: center;
-  
 }
 
 .listItem:hover {
@@ -152,6 +146,7 @@ footer {
 button {
   font-size: 20px;
   border-radius: 5px;
+  background-color: #E0ECE4;
 }
 
 .allDrinkItem  img{
@@ -224,4 +219,30 @@ p {
   width: 300px;
   height: auto;
   align-self: flex-start;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #E0ECE4;
+  position: fixed;
+  bottom: 0px;
+  width: 99vw;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.issue {
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: left;
+  font-family: Bitter, Arial, sans-serif;
+}
+
+footer {
+  font-family: Shadows Into Light, Arial, sans-serif;
+  font-size: 15px;
+  text-align: right;
 }
