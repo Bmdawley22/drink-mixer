@@ -27,6 +27,23 @@ nav .Link {
   width: 30vw;
 }
 
+.Footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.issue {
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: left;
+}
+
+footer {
+  font-family: Shadows Into Light, Arial, sans-serif;
+  font-size: 15px;
+  text-align: right;
+}
 
 .ingredientContainer {
   display: flex;
@@ -41,6 +58,7 @@ nav .Link {
   width: 100px;
   height: 100px;
 }
+
 .active {
   background-color: grey;
 }
