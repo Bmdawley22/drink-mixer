@@ -252,6 +252,45 @@ p {
   align-self: flex-start;
 }
 
+.createDrinkWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 100vw;
+}
+
+.createDrink {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #797A7E;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  width: 60vw;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.createDrink input, .createDrink span {
+  margin: 10px;
+  font-size: 20px;
+  color: white
+}
+
+.createDrink input {
+  background-color: #e0ece4;
+  color: black;
+  border-radius: 5px;
+}
+
+.addIngredient {
+  height: 170px;
+  overflow-y: auto;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;

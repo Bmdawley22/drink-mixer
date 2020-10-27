@@ -35,8 +35,9 @@ class CreateDrink extends Component {
 
     render() {
         return(
-            <div>
-                <h2>Create Drink</h2>
+            <div className='createDrinkWrapper'>
+                <h1>Create Drink</h1>
+                <div className='createDrink'>
                 <form onSubmit={(e) => this.props.createDrink(e, this.state)}>
                     <input type='submit' />
                     <br/>
@@ -51,6 +52,7 @@ class CreateDrink extends Component {
                     <input type='textarea' name='strInstructions' onChange={this.onChange}/>
                     <br/>
                     <span>Ingredients (Ingredient, amount)</span>
+                    <div className='addIngredient'>
                     {this.state.ingredientsNum.map((ingredient, id) => {
                         return (
                             <div>
@@ -60,8 +62,10 @@ class CreateDrink extends Component {
                             </div>
                         )
                     })}  
+                    </div>
                 </form>
                 <button onClick={() => this.addIngredient()}>Add another ingredient</button> 
+                </div>
             </div>
         )
     }
