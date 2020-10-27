@@ -131,7 +131,7 @@ button:hover, .Link:hover {
   flex-flow: column;
   align-items: center;
   overflow-y: auto;
-  box-shadow: 0 4px 8px 0 white;
+  box-shadow: 0 8px 16px 0 white;
   background: #797a7e;
   margin-left: 10vw;
   padding-top: 10px;
@@ -179,19 +179,28 @@ button {
   text-align: left;
 }
 
-.allDrinkName {
-  position: absolute;
-  bottom: 20px;
-  left: 8px;
-  background-color: grey;
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.allDrinkBoard {
+.drinkBoard {
   display: flex;
   flex-flow: row wrap;
+  justify-content: left;
+  margin-top: 30px;
 }
+.drinkLink {
+  background-color: #797a7e;
+  border: solid white 5px;
+  margin: 5px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.drinkBoard img {
+  object-fit: fill;
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 
 .randomDrinkContainer {
   display: flex;

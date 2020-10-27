@@ -18,17 +18,20 @@ class AllDrinks extends Component {
 
     render(){
         return(
-            <div className='allDrinkBoard'>
+            <div className='drinkBoard'>
                 {this.state.drinks.map((drink,id)=> {
                     return (
                         <Link 
                             to={'/all-drinks/show-drink/'+ id} 
-                            className='allDrinkItem'
+                            className='drinkLink'
                             onClick={()=> this.props.setActive(id)}
                             key={id}
                         > 
-                            <img src={drink.strDrinkThumb} alt='all drink thumbnail' />
-                            <div className='allDrinkName'>{drink.strDrink}</div>
+                            <img 
+                                src={drink.strDrinkThumb} 
+                                alt='all drink thumbnail' 
+                            />
+                            <h3 className='drinkName'>{drink.strDrink}</h3>
                         </Link>
                     )
                 })}
