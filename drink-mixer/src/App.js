@@ -1,16 +1,23 @@
 // import React
 import React, {Component} from 'react';
 
+// import App Styling
 import './App.css';
+
+// import Router 
 import {Route, Switch, withRouter} from 'react-router-dom';
 
+// import Header
 import Header from './components/Header';
 
+// import Create Drink
 import CreateDrink from './components/CreateDrink/CreateDrink';
 
+// import By Spirit
 import BySpirit from './components/BySpirit/BySpirit';
 import BySpiritContainer from './components/BySpirit/BySpiritContainer';
 
+// import All Drinks
 import AllDrinks from './components/AllDrinks/AllDrinks';
 import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
@@ -20,18 +27,20 @@ import RandomDrink from './components/RandomDrink/RandomDrink';
 // import for API
 import axios from 'axios';
 
+// import data for all drinks
 import drinks from './data';
+
 // class base
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      randomDrink: "",
+      randomDrink: '',
       apiDataError: false,
       drinks: drinks,
       allDrinksActiveDrink: null,
-      message: "",
+      message: '',
       bySpiritActiveDrink: {},
       bySpiritDrinks: []
     }
@@ -39,7 +48,8 @@ class App extends Component {
 
   // setting the active tab for the list page
   setActive = (id) => {
-    const allDrinksActiveDrink=id;
+    const allDrinksActiveDrink = id;
+
     this.setState({
       allDrinksActiveDrink: allDrinksActiveDrink,
     })
@@ -54,7 +64,14 @@ class App extends Component {
     })
   }
 
-  // adding Random Drink to All Drinks list
+  // setting the spirit drinks array to empty
+  resetBySpiritDrinks = () => {
+    this.setState({ 
+      bySpiritDrinks: []
+    })
+  }
+
+  // adding Drink to All Drinks list
   addDrink = (bySpiritDrink) => {
     let message;
     let drinks;
@@ -66,24 +83,25 @@ class App extends Component {
       return drink.idDrink
     })
 
-    // if the current list of drink id's include the random drink id, will not add that drink to the list
-    //    else add the random drink to the all drinks list
+    // if bySpiritDrink exists, then set the variables
+    //    else if the random drink exists, then set the variables
     
     if (bySpiritDrink) {
-      drinkId= bySpiritDrink.idDrink;
-      drink= bySpiritDrink;
+      drinkId = bySpiritDrink.idDrink;
+      drink = bySpiritDrink;
     } else {
       drinkId = this.state.randomDrink.idDrink;
       drink = this.state.randomDrink;
     }
 
-    
+    // if the current list of drink id's include the drink id, will not add that drink to the list
+    //    else add the drink to the all drinks list
     if (idArray.includes(drinkId)) {
-      message = "Drink is already in All Drinks List"
+      message = 'Drink is already in All Drinks List'
       drinks = this.state.drinks
     } else {
       drinks = this.state.drinks
-      message = "Drink is added to All Drinks List"
+      message = 'Drink is added to All Drinks List'
       drinks.push(drink)
     }
 
@@ -98,7 +116,7 @@ class App extends Component {
 
   // reset message after 3 seconds of message being displayed
   resetMessage = () => {
-    const message = ""
+    const message = ''
     
     this.setState({
       message
@@ -106,9 +124,9 @@ class App extends Component {
   }
 
   // creating a new drink and adding to state to be displayed in All Drinks
-  createDrink= (e, newDrink) => {
+  createDrink = (e, newDrink) => {
     e.preventDefault();
-    const drinks=this.state.drinks;
+    const drinks = this.state.drinks;
     drinks.push(newDrink);
 
     this.setState({
@@ -121,7 +139,7 @@ class App extends Component {
 
   // Random Drink API call
   async componentDidMount() {
-    const URL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+    const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
     try {
       const response = await axios(URL);
@@ -134,9 +152,6 @@ class App extends Component {
         apiDataError: true
       })
     }
-  }
-  resetBySpiritDrinks = () => {
-    this.setState({ bySpiritDrinks: []})
   }
 
   render () {
@@ -158,7 +173,7 @@ class App extends Component {
               setActive={this.setActive}
             />
           }} />
-          <Route path="/random-drink" render={() => {
+          <Route path='/random-drink' render={() => {
             return <RandomDrink 
               randomDrink={this.state.randomDrink} 
               onClick={() => this.componentDidMount()} 
@@ -168,12 +183,12 @@ class App extends Component {
           }} />
           <Route path='/by-spirit/show-drink/:index' render={(props) => {
             return <BySpiritContainer 
-                  {...props} 
-                  drinks={this.state.bySpiritDrinks} 
-                  bySpiritActiveDrink={this.state.bySpiritActiveDrink}
-                  addDrink={this.addDrink} 
-                  message={this.state.message}
-                />
+              {...props} 
+              drinks={this.state.bySpiritDrinks} 
+              bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+              addDrink={this.addDrink} 
+              message={this.state.message}
+            />
           }} />
           <Route exact path='/by-spirit' render={() => {
             return <BySpirit 
