@@ -42,7 +42,7 @@ class App extends Component {
       randomDrink: '',
       apiDataError: false,
       drinks: drinks,
-      allDrinksActiveDrink: null,
+      activeDrinkId: null,
       message: '',
       bySpiritActiveDrink: {},
       bySpiritDrinks: []
@@ -51,10 +51,10 @@ class App extends Component {
 
   // setting the active tab for the list page
   setActive = (id) => {
-    const allDrinksActiveDrink = id;
+    const activeDrinkId = id;
 
     this.setState({
-      allDrinksActiveDrink: allDrinksActiveDrink,
+      activeDrinkId : activeDrinkId,
     })
   }
   
@@ -167,7 +167,7 @@ class App extends Component {
               {...props} 
               drinks={this.state.drinks} 
               setActive={this.setActive} 
-              allDrinksActiveDrink={this.state.allDrinksActiveDrink}
+              activeDrinkId={this.state.activeDrinkId}
             />
           }} />
           <Route exact path='/all-drinks' render={() => {

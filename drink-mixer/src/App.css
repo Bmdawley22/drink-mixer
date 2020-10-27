@@ -44,3 +44,21 @@ footer {
   font-size: 15px;
   text-align: right;
 }
+
+.ingredientContainer {
+  display: flex;
+}
+
+.showDrinkImg {
+  width:300px;
+  height: 300px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+}
+
+.active {
+  background-color: grey;
+}
