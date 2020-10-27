@@ -19,40 +19,41 @@ const RandomDrink = (props) => {
 
     return (
         <div className='randomDrinkContainer'>
-            <h1 className='randomDrink'>Random Drink Generator</h1>
+            <h1>Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
-            <h2>{props.randomDrink.strDrink}</h2>
-            <div className='randomDrinkWrapper'>
-                <img className='randomImage' src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
-                <div>
-                <h3>Ingredients:</h3>
-                    <div className='random-ingredient-container'>
-                        <div className='measurements'>
-                            {measurements.map((measurement, id) => {
-                                return (
-                                    <div className='randomMeasure' key={id}>
-                                        {measurement ? <li >- {measurement}</li> : null}
-                                    </div>
-                                )
-                            })}
+            <div className='randomDrink'>
+                <h1>{props.randomDrink.strDrink}</h1>
+                <div className='randomDrinkWrapper'>
+                    <img className='randomImage' src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+                    <div>
+                    <h2>Ingredients:</h2>
+                        <div className='random-ingredient-container'>
+                            <div className='measurements'>
+                                {measurements.map((measurement, id) => {
+                                    return (
+                                        <div className='randomMeasure' key={id}>
+                                            {measurement ? <li >- {measurement}</li> : null}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className='randomIngredient'>
+                                {ingredients.map((ingredient, id) => {
+                                    return (
+                                        <div key={id}>
+                                            {ingredient ? <li >{ingredient}</li> : null}
+                                        </div>
+                                    )
+                                })}
+                            </div>
                         </div>
-                        <div className='randomIngredient'>
-                            {ingredients.map((ingredient, id) => {
-                                return (
-                                    <div key={id}>
-                                        {ingredient ? <li >{ingredient}</li> : null}
-                                    </div>
-                                )
-                            })}
-                        </div>
+                        <h2>Directions: </h2>   
+                        <p>{props.randomDrink.strInstructions}</p>
                     </div>
-                    <br />
-                    <h3>Directions: </h3>   
-                    <p>{props.randomDrink.strInstructions}</p>
                 </div>
+                <button onClick={() => props.addRandomDrink()}>Add Drink</button>
+                {props.message && <h3>{props.message}</h3>}
             </div>
-            <button onClick={() => props.addRandomDrink()}>Add Drink</button>
-            {props.message && <h3>{props.message}</h3>}
         </div>
     )
 }
