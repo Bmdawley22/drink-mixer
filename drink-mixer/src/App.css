@@ -1,7 +1,19 @@
+body {
+  background-color: #d8d3cd;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Bitter, Arial, sans-serif;
+  background-color: #E0ECE4;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+header h1 {
+  margin: 0px;
 }
 
 nav {
@@ -12,8 +24,18 @@ nav {
 }
 
 nav .Link {
-  border: 1px solid black;
   text-decoration: none;
+  background-color: #797A7E;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+button:hover, .Link:hover {
+  background-color: white;
+  color: #797A7E;
+  font-weight: bold;
 }
 
 #categories-wrapper {
@@ -27,9 +49,194 @@ nav .Link {
   width: 30vw;
 }
 
+.ingredientContainer {
+  display: flex;
+  height: 25vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.drinkWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.showDrinkImg {
+  width:300px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.thumbnail {
+  width: 150px;
+  height: 150px;
+}
+
+.active {
+  background-color: #797a7e;
+}
+
+.drinkContainer {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.drinksList {
+  width: 30vw;
+  height: 85vh;
+  overflow-y: auto;
+  border: solid #797a7e 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.drinksList a {
+  text-decoration: none;
+  color: black;
+}
+
+.listItem {
+  height: 150px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.listItem:hover {
+  border: solid #797a7e 3px;
+}
+
+.listItem h4 {
+  margin: 0px auto;
+  font-size: 25px;
+  text-align: center;
+}
+
+.drinksShow {
+  width: 40vw;
+  height: 75vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px 0 white;
+  background: #797a7e;
+  margin-left: 10vw;
+  padding-top: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.showDirections {
+  text-align: center;
+  width: 50%;
+  margin-left: 5px;
+}
+
+.showDirections p {
+  text-align: left;
+  text-indent: 25px;
+}
+
+.ingredientWrapper h2 {
+  text-align: center;
+}
+
+.active {
+  background-color: grey;
+}
+
+button {
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #E0ECE4;
+}
+
+.allDrinkItem  img{
+  border-radius: 15px;
+  width: 200px;
+  height: 200px;
+}
+
+.allDrinkItem {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  text-align: left;
+}
+
+.allDrinkName {
+  position: absolute;
+  bottom: 20px;
+  left: 8px;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.allDrinkBoard {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.randomDrinkContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.randomDrinkWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 800px;
+}
+
+.random-ingredient-container {
+  display: flex;
+  flex-flow: row;
+}
+
+h3 {
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.randomIngredient {
+  list-style: none;
+  padding-left: 8px;
+}
+
+.randomMeasure {
+  list-style: none;
+  padding-left: 10px;
+}
+
+p {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.randomImage {
+  width: 300px;
+  height: auto;
+  align-self: flex-start;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
+  background-color: #E0ECE4;
+  position: fixed;
+  bottom: 0px;
+  width: 99vw;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .issue {
@@ -37,28 +244,11 @@ nav .Link {
   font-size: 15px;
   text-decoration: none;
   text-align: left;
+  font-family: Bitter, Arial, sans-serif;
 }
 
 footer {
   font-family: Shadows Into Light, Arial, sans-serif;
   font-size: 15px;
   text-align: right;
-}
-
-.ingredientContainer {
-  display: flex;
-}
-
-.showDrinkImg {
-  width:300px;
-  height: 300px;
-}
-
-.thumbnail {
-  width: 100px;
-  height: 100px;
-}
-
-.active {
-  background-color: grey;
 }

@@ -2,8 +2,6 @@ import React, { Component} from 'react';
 import {Link} from 'react-router-dom';
 //import axios from 'axios';
 
-import './AllDrinks.css';
-
 class AllDrinks extends Component {
     constructor(props){
         super(props);

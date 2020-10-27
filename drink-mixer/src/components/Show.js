@@ -13,33 +13,37 @@ function Show(props) {
         measures.push(props.drink[temp])
     }
     return(
-        <div className='AllDrinksShow'>
+        <div className='drinksShow'>
             <img src={props.drink.strDrinkThumb} alt='showDrinkImg' className='showDrinkImg' />
             <h1>{props.drink.strDrink}</h1>
-            <h2>Ingredients</h2>
-            <div className='ingredientContainer'>
-                <div className='ingredientMeasure'>
-                    {measures.map((measure,id)=> {
-                        return (
-                            <div key={id}>
-                                {measure && <p>{measure}</p>}
-                            </div>
-                        )
-                    })}
+            <div className='drinkWrapper'>
+                <div className='ingredientWrapper'>
+                    <h2>Ingredients</h2>
+                    <div className='ingredientContainer'>
+                        <div className='ingredientMeasure'>
+                            {measures.map((measure,id)=> {
+                                return (
+                                    <div key={id}>
+                                        {measure && <p>{measure}</p>}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className='ingredientName'>
+                            {ingredients.map((ingredient, id)=> {
+                                return (
+                                    <div key={id}>
+                                        {ingredient && <p>{ingredient}</p>}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
-                <div className='ingredientName'>
-                    {ingredients.map((ingredient, id)=> {
-                        return (
-                            <div key={id}>
-                                {ingredient && <p>{ingredient}</p>}
-                            </div>
-                        )
-                    })}
+                <div className='showDirections'>
+                    <h2>Directions</h2>
+                    <p>{props.drink.strInstructions}</p>
                 </div>
-            </div>
-            <div>
-                <h2>Directions</h2>
-                <p>{props.drink.strInstructions}</p>
             </div>
             {props.message !== undefined && <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>}
             {props.message && <h3>{props.message}</h3>}

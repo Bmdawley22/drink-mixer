@@ -5,9 +5,6 @@ import Show from '../Show';
 
 import axios from 'axios';
 
-
-import '../AllDrinks/AllDrinkContainer.css';
-
 class BySpiritContainer extends Component {
     constructor(props) {
         super(props)
@@ -27,7 +24,7 @@ class BySpiritContainer extends Component {
 
     render() {
         return(
-            <div className='allDrinkContainer'>
+            <div className='drinkContainer'>
                 <List 
                     drinks={this.props.drinks} 
                     activeDrinkId={this.state.activeDrinkId}
