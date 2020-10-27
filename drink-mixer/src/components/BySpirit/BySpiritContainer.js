@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import BySpiritList from './BySpiritList';
-import BySpiritShow from './BySpiritShow';
+import Show from '../Show';
 
 import axios from 'axios';
 
@@ -34,7 +34,7 @@ class BySpiritContainer extends Component {
                     onListClick={this.onListClick}
                 />
                 {this.state.activeDrink.strDrink ? 
-                    <BySpiritShow  
+                    <Show  
                         drink={this.state.activeDrink} 
                         addDrink={this.props.addDrink} 
                         message={this.props.message}

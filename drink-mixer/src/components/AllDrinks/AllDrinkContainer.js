@@ -1,7 +1,7 @@
 import React from 'react-router-dom';
 
 import AllDrinksList from './AllDrinksList';
-import AllDrinksShow from './AllDrinksShow';
+import Show from '../Show';
 
 import './AllDrinkContainer.css';
 
@@ -10,7 +10,7 @@ function AllDrinkContainer(props) {
     return(
         <div className='allDrinkContainer'>
             <AllDrinksList drinks={props.drinks} setActive={props.setActive} allDrinksActiveDrink={props.allDrinksActiveDrink}/>
-            <AllDrinksShow drinks={props.drinks} drink={props.drinks[index]} />
+            <Show drinks={props.drinks} drink={props.drinks[index]} />
         </div>
     )
 }
