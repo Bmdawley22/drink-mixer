@@ -13,7 +13,7 @@ class BySpiritContainer extends Component {
         super(props)
         this.state = {
             activeDrink: {},
-            activeDrinkId: 0
+            activeDrinkId: null
         }
     }
     onListClick = async (id, idDrink) => {
@@ -30,7 +30,7 @@ class BySpiritContainer extends Component {
             <div className='allDrinkContainer'>
                 <BySpiritList 
                     drinks={this.props.drinks} 
-                    activeDrinkId={this.props.activeDrinkId}
+                    activeDrinkId={this.state.activeDrinkId}
                     onListClick={this.onListClick}
                 />
                 {this.state.activeDrink.strDrink ? <BySpiritShow  drink={this.state.activeDrink} /> : <p>Click drink to see more</p>}
