@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BySpiritList from './BySpiritList';
+import List from '../List';
 import Show from '../Show';
 
 import axios from 'axios';
@@ -28,7 +28,7 @@ class BySpiritContainer extends Component {
     render() {
         return(
             <div className='allDrinkContainer'>
-                <BySpiritList 
+                <List 
                     drinks={this.props.drinks} 
                     activeDrinkId={this.state.activeDrinkId}
                     onListClick={this.onListClick}
