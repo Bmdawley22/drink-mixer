@@ -3,7 +3,6 @@ import React from 'react';
 import '../AllDrinks/AllDrinksShow.css';
 
 function BySpiritShow(props) {
-    console.log(props)
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
         const temp=`strIngredient${i}`
@@ -24,7 +23,7 @@ function BySpiritShow(props) {
                 <div className='ingredientMeasure'>
                     {measures.map((measure,id)=> {
                         return (
-                            <div>
+                            <div key={id}>
                                 {measure && <p>{measure}</p>}
                             </div>
                         )
@@ -33,7 +32,7 @@ function BySpiritShow(props) {
                 <div className='ingredientName'>
                     {ingredients.map((ingredient, id)=> {
                         return (
-                            <div>
+                            <div key={id}>
                                 {ingredient && <p>{ingredient}</p>}
                             </div>
                         )

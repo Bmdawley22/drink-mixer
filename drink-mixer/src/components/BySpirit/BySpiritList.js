@@ -9,9 +9,9 @@ function BySpiritList(props) {
                 return(
                     <Link 
                         to={'/by-spirit/show-drink/'+id}
-                        onClick={()=> props.setActive(id)}
+                        onClick={()=> props.onListClick(id, drink.idDrink)}
                     >
-                        <div className={props.bySpiritActiveDrink ===id ? "active" : ""}> 
+                        <div className={props.bySpiritActiveDrinkId ===id ? "active" : ""}> 
                             <img src={drink.strDrinkThumb} alt='thumbnail' className='thumbnail'/>
                             {drink.strDrink} 
                         </div>

@@ -31,7 +31,6 @@ class App extends Component {
       allDrinksActiveDrink: null,
       message: "",
       bySpiritActiveDrink: {},
-      bySpiritActiveDrinkId: 0,
       bySpiritDrinks: []
     }
   }
@@ -45,12 +44,12 @@ class App extends Component {
   
   BySpiritCall = async (cat) => {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
-    const firstDrinkId = resp.data.drinks[0].idDrink;
-    const resp2 = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${firstDrinkId}`);
-    const bySpiritActiveDrink = resp2.data.drinks[0];
+    //const firstDrinkId = resp.data.drinks[0].idDrink;
+    //const resp2 = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${firstDrinkId}`);
+    //const bySpiritActiveDrink = resp2.data.drinks[0];
     this.setState({ 
       bySpiritDrinks: resp.data.drinks,
-      bySpiritActiveDrink
+      //bySpiritActiveDrink
     })
   }
 
@@ -140,7 +139,6 @@ class App extends Component {
           return <BySpiritContainer 
                   {...props} 
                   drinks={this.state.bySpiritDrinks} 
-                  setActive={this.setActive} 
                   bySpiritActiveDrink={this.state.bySpiritActiveDrink}
                 />
         }} />
