@@ -10,6 +10,9 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 // import Header
 import Header from './components/Header';
 
+// import Footer
+import Footer from './components/Footer';
+
 // import Create Drink
 import CreateDrink from './components/CreateDrink/CreateDrink';
 
@@ -200,6 +203,7 @@ class App extends Component {
             return <CreateDrink createDrink={this.createDrink}/>
           }} />
         </Switch>
+        <Footer />
       </div>
     )
   }
