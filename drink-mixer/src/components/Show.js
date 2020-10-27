@@ -13,7 +13,7 @@ function Show(props) {
         measures.push(props.drink[temp])
     }
     return(
-        <div className='AllDrinksShow'>
+        <div className='drinksShow'>
             <img src={props.drink.strDrinkThumb} alt='showDrinkImg' className='showDrinkImg' />
             <h1>{props.drink.strDrink}</h1>
             <h2>Ingredients</h2>

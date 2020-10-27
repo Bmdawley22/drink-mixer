@@ -62,3 +62,47 @@ footer {
 .active {
   background-color: grey;
 }
+
+.drinkContainer {
+  display: flex;
+  flex-flow: row;
+}
+
+.drinksList {
+  width: 30vw;
+}
+
+.drinksShow {
+  width: 70vw;
+}
+
+.active {
+  background-color: grey;
+}
+
+.allDrinkItem  img{
+  border-radius: 15px;
+  width: 200px;
+  height: 200px;
+}
+
+.allDrinkItem {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  text-align: left;
+}
+
+.allDrinkName {
+  position: absolute;
+  bottom: 20px;
+  left: 8px;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.allDrinkBoard {
+  display: flex;
+  flex-flow: row wrap;
+}

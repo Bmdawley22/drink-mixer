@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function List(props) {
     return (
-        <div className='AllDrinksList'>
+        <div className='drinksList'>
             {props.drinks.map((drink, id) => {
                 return(
                     <Link 
