@@ -43,6 +43,8 @@ function BySpiritShow(props) {
                 <h2>Directions</h2>
                 <p>{props.drink.strInstructions}</p>
             </div>
+            <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>
+            {props.message && <h3>{props.message}</h3>}
         </div>
     )
 }

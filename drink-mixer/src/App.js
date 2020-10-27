@@ -55,9 +55,11 @@ class App extends Component {
   }
 
   // adding Random Drink to All Drinks list
-  addRandomDrink = () => {
+  addDrink = (bySpiritDrink) => {
     let message;
     let drinks;
+    let drinkId;
+    let drink;
 
     // creating a new array of drink ids in the current data list
     let idArray = this.state.drinks.map((drink, id) => {
@@ -66,13 +68,23 @@ class App extends Component {
 
     // if the current list of drink id's include the random drink id, will not add that drink to the list
     //    else add the random drink to the all drinks list
-    if (idArray.includes(this.state.randomDrink.idDrink)) {
+    
+    if (bySpiritDrink) {
+      drinkId= bySpiritDrink.idDrink;
+      drink= bySpiritDrink;
+    } else {
+      drinkId = this.state.randomDrink.idDrink;
+      drink = this.state.randomDrink;
+    }
+
+    
+    if (idArray.includes(drinkId)) {
       message = "Drink is already in All Drinks List"
       drinks = this.state.drinks
     } else {
       drinks = this.state.drinks
-      message = "Random Drink is added to All Drinks List"
-      drinks.push(this.state.randomDrink)
+      message = "Drink is added to All Drinks List"
+      drinks.push(drink)
     }
 
     this.setState({
@@ -150,7 +162,7 @@ class App extends Component {
             return <RandomDrink 
               randomDrink={this.state.randomDrink} 
               onClick={() => this.componentDidMount()} 
-              addRandomDrink={this.addRandomDrink} 
+              addRandomDrink={this.addDrink} 
               message={this.state.message}
             />
           }} />
@@ -159,6 +171,8 @@ class App extends Component {
                   {...props} 
                   drinks={this.state.bySpiritDrinks} 
                   bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+                  addDrink={this.addDrink} 
+                  message={this.state.message}
                 />
           }} />
           <Route exact path='/by-spirit' render={() => {
