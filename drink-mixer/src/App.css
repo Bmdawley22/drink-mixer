@@ -6,6 +6,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Bitter, Arial, sans-serif;
 }
 
 nav {
@@ -51,11 +52,19 @@ footer {
 
 .ingredientContainer {
   display: flex;
+  height: 25vh;
+  overflow-y: auto;
+}
+
+.drinkWrapper {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .showDrinkImg {
   width:300px;
   height: 300px;
+  border-radius: 5px;
 }
 
 .thumbnail {
@@ -70,6 +79,7 @@ footer {
 .drinkContainer {
   display: flex;
   flex-flow: row;
+  align-items: center;
 }
 
 .drinksList {
@@ -80,7 +90,6 @@ footer {
   margin-left: 10px;
   display: flex;
   flex-flow: column;
-  
 }
 
 .drinksList a {
@@ -107,12 +116,42 @@ footer {
 }
 
 .drinksShow {
-  width: 70vw;
-  height: 80vh;
+  width: 40vw;
+  height: 75vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px 0 white;
+  background: #797a7e;
+  margin-left: 10vw;
+  padding-top: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.showDirections {
+  text-align: center;
+  width: 50%;
+  margin-left: 5px;
+}
+
+.showDirections p {
+  text-align: left;
+  text-indent: 25px;
+}
+
+.ingredientWrapper h2 {
+  text-align: center;
 }
 
 .active {
   background-color: grey;
+}
+
+button {
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 .allDrinkItem  img{
