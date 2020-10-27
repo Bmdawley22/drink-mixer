@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './AllDrinks/AllDrinksShow.css';
-
 function Show(props) {
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
