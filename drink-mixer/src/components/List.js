@@ -11,9 +11,9 @@ function List(props) {
                         onClick={props.onListClick ? ()=> props.onListClick(id, drink.idDrink) : ()=> props.setActive(id)}
                         key = {id}
                     >
-                        <div className={props.activeDrinkId === id ? "active" : ""}> 
+                        <div className={props.activeDrinkId === id ? "active listItem" : "listItem"}> 
                             <img src={drink.strDrinkThumb} alt='thumbnail' className='thumbnail'/>
-                            {drink.strDrink} 
+                            <h4>{drink.strDrink}</h4>
                         </div>
                     </Link>
                 )

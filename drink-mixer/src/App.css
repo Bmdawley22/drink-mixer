@@ -1,3 +1,7 @@
+body {
+  background-color: #d8d3cd;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -55,12 +59,12 @@ footer {
 }
 
 .thumbnail {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .active {
-  background-color: grey;
+  background-color: #797a7e;
 }
 
 .drinkContainer {
@@ -70,10 +74,41 @@ footer {
 
 .drinksList {
   width: 30vw;
+  height: 85vh;
+  overflow-y:auto;
+  border: solid #797a7e 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-flow: column;
+  
+}
+
+.drinksList a {
+  text-decoration: none;
+  color: black;
+}
+
+.listItem {
+  height: 150px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  
+}
+
+.listItem:hover {
+  border: solid #797a7e 3px;
+}
+
+.listItem h4 {
+  margin: 0px auto;
+  font-size: 25px;
+  text-align: center;
 }
 
 .drinksShow {
   width: 70vw;
+  height: 80vh;
 }
 
 .active {
