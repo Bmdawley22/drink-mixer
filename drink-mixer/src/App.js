@@ -30,26 +30,27 @@ class App extends Component {
       drinks: drinks,
       allDrinksActiveDrink: null,
       message: "",
-      bySpiritActiveDrink:0,
+      bySpiritActiveDrink: {},
+      bySpiritActiveDrinkId: 0,
       bySpiritDrinks: []
     }
   }
 
   setActive = (id) => {
     const allDrinksActiveDrink=id;
-    const bySpiritActiveDrink=id;
     this.setState({
       allDrinksActiveDrink: allDrinksActiveDrink,
-      bySpiritActiveDrink: bySpiritActiveDrink
     })
   }
   
   BySpiritCall = async (cat) => {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
-    console.log(resp.data.drinks)
+    const firstDrinkId = resp.data.drinks[0].idDrink;
+    const resp2 = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${firstDrinkId}`);
+    const bySpiritActiveDrink = resp2.data.drinks[0];
     this.setState({ 
       bySpiritDrinks: resp.data.drinks,
-      bySpiritActiveDrink: 0
+      bySpiritActiveDrink
     })
   }
 
@@ -108,13 +109,21 @@ class App extends Component {
       })
     }
   }
+  resetBySpiritDrinks = () => {
+    this.setState({ bySpiritDrinks: []})
+  }
 
   render () {
     return (
       <div className='App'>
         <Header />
         <Route path='/all-drinks/show-drink/:index' render={(props) => {
-          return <AllDrinkContainer {...props} drinks={this.state.drinks} setActive={this.setActive} allDrinksActiveDrink={this.state.allDrinksActiveDrink}/>
+          return <AllDrinkContainer 
+                  {...props} 
+                  drinks={this.state.drinks} 
+                  setActive={this.setActive} 
+                  allDrinksActiveDrink={this.state.allDrinksActiveDrink}
+                />
         }} />
         <Route exact path='/all-drinks' render={() => {
           return <AllDrinks drinks={this.state.drinks} setActive={this.setActive}/>
@@ -128,10 +137,18 @@ class App extends Component {
           />
         }} />
         <Route path='/by-spirit/show-drink/:index' render={(props) => {
-          return <BySpiritContainer drinks={this.state.bySpiritDrinks} setActive={this.setActive} bySpiritActiveDrink={this.state.bySpiritActiveDrink}/>
+          return <BySpiritContainer 
+                  {...props} 
+                  drinks={this.state.bySpiritDrinks} 
+                  setActive={this.setActive} 
+                  bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+                />
         }} />
         <Route exact path='/by-spirit' render={() => {
-          return <BySpirit BySpiritCall={this.BySpiritCall}/>
+          return <BySpirit 
+            BySpiritCall={this.BySpiritCall}
+            resetBySpiritDrinks={this.resetBySpiritDrinks}
+          />
         }} />
       </div>
     )
