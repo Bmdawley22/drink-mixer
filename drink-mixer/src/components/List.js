@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './AllDrinks/AllDrinksList.css';
 
 function List(props) {
     return (
