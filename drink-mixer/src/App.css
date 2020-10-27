@@ -194,6 +194,11 @@ button {
   text-decoration: none;
   color: white;
 }
+.drinkLink:hover {
+  background-color: white;
+  border: solid #797A7E 5px;
+  color: #797A7E;
+}
 .drinkBoard img {
   object-fit: fill;
   width: 200px;
