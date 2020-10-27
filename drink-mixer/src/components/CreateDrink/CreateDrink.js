@@ -1,5 +1,7 @@
+// import React
 import React, {Component} from 'react';
 
+// class base
 class CreateDrink extends Component {
     constructor(props) {
         super(props);
@@ -65,4 +67,5 @@ class CreateDrink extends Component {
     }
 }
 
+// export Create Drink
 export default CreateDrink;

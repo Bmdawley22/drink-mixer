@@ -1,8 +1,6 @@
 import React from 'react';
 
-import '../AllDrinks/AllDrinksShow.css';
-
-function BySpiritShow(props) {
+function Show(props) {
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
         const temp=`strIngredient${i}`
@@ -43,10 +41,10 @@ function BySpiritShow(props) {
                 <h2>Directions</h2>
                 <p>{props.drink.strInstructions}</p>
             </div>
-            <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>
+            {props.message !== undefined && <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>}
             {props.message && <h3>{props.message}</h3>}
         </div>
     )
 }
 
-export default BySpiritShow;
+export default Show;

@@ -21,25 +21,25 @@ const RandomDrink = (props) => {
     }
 
     return (
-        <div className="randomDrinkContainer">
-            <h1 className="randomDrink">Random Drink Generator</h1>
+        <div className='randomDrinkContainer'>
+            <h1 className='randomDrink'>Random Drink Generator</h1>
             <button onClick={props.onClick}>Random Drink</button>
             <h2>{props.randomDrink.strDrink}</h2>
-            <div className="drinkWrapper">
-                <img className="randomImage" src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
+            <div className='drinkWrapper'>
+                <img className='randomImage' src={props.randomDrink.strDrinkThumb} alt={props.randomDrink.strDrink}/>
                 <div>
                 <h3>Ingredients:</h3>
-                    <div className="ingredient-container">
-                        <div className="measurements">
+                    <div className='ingredient-container'>
+                        <div className='measurements'>
                             {measurements.map((measurement, id) => {
                                 return (
-                                    <div className="measure" key={id}>
+                                    <div className='measure' key={id}>
                                         {measurement ? <li >- {measurement}</li> : null}
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className="ingredient">
+                        <div className='ingredient'>
                             {ingredients.map((ingredient, id) => {
                                 return (
                                     <div key={id}>
@@ -60,5 +60,5 @@ const RandomDrink = (props) => {
     )
 }
 
-// export 
+// export Random Drink
 export default RandomDrink;
