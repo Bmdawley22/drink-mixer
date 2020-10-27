@@ -16,6 +16,15 @@ header h1 {
   margin: 0px;
 }
 
+.title {
+  text-decoration: none;
+  color: black;
+}
+
+.title:hover, .issue:hover {
+  text-decoration: underline;
+}
+
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -51,7 +60,7 @@ button:hover, .Link:hover {
 
 .ingredientContainer {
   display: flex;
-  height: 25vh;
+  height: 20vh;
   overflow-y: auto;
   padding-right: 5px;
 }
@@ -153,6 +162,8 @@ button {
   font-size: 20px;
   border-radius: 5px;
   background-color: #E0ECE4;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .allDrinkItem  img{

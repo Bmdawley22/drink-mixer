@@ -24,7 +24,7 @@ function Show(props) {
                             {measures.map((measure,id)=> {
                                 return (
                                     <div key={id}>
-                                        {measure && <p>{measure}</p>}
+                                        {measure && <p>- {measure}</p>}
                                     </div>
                                 )
                             })}
