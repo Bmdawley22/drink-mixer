@@ -1,18 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import BySpiritList from './BySpiritList';
 import BySpiritShow from './BySpiritShow';
 
+import axios from 'axios';
+
+
 import '../AllDrinks/AllDrinkContainer.css';
 
-function BySpiritContainer(props) {
-    console.log(props)
+class BySpiritContainer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            activeDrink: {},
+            activeDrinkId: null
+        }
+    }
+    onListClick = async (id, idDrink) => {
+        const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
+        const activeDrink = resp.data.drinks[0];
+        this.setState({ 
+            activeDrink,
+            activeDrinkId: id
+        })
+    }
 
-    return(
-        <div className='allDrinkContainer'>
-            <BySpiritList drinks={props.drinks} setActive={props.setActive} bySpiritActiveDrink={props.bySpiritActiveDrink}/>
-        </div>
-    )
+    render() {
+        return(
+            <div className='allDrinkContainer'>
+                <BySpiritList 
+                    drinks={this.props.drinks} 
+                    activeDrinkId={this.state.activeDrinkId}
+                    onListClick={this.onListClick}
+                />
+                {this.state.activeDrink.strDrink ? <BySpiritShow  drink={this.state.activeDrink} /> : <p>Click drink to see more</p>}
+            </div>
+        )
+    }
+
 }
 
 export default BySpiritContainer;

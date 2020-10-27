@@ -32,29 +32,25 @@ class App extends Component {
       drinks: drinks,
       allDrinksActiveDrink: null,
       message: "",
-      bySpiritActiveDrink:0,
+      bySpiritActiveDrink: {},
       bySpiritDrinks: []
     }
   }
 
   // setting the active tab for the list page
   setActive = (id) => {
-    const allDrinksActiveDrink = id;
-    const bySpiritActiveDrink = id;
-
+    const allDrinksActiveDrink=id;
     this.setState({
       allDrinksActiveDrink: allDrinksActiveDrink,
-      bySpiritActiveDrink: bySpiritActiveDrink
     })
   }
   
   // calling the API by spirit category
   BySpiritCall = async (cat) => {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
-
     this.setState({ 
       bySpiritDrinks: resp.data.drinks,
-      bySpiritActiveDrink: 0
+      //bySpiritActiveDrink
     })
   }
 
@@ -127,6 +123,9 @@ class App extends Component {
       })
     }
   }
+  resetBySpiritDrinks = () => {
+    this.setState({ bySpiritDrinks: []})
+  }
 
   render () {
     return (
@@ -157,13 +156,16 @@ class App extends Component {
           }} />
           <Route path='/by-spirit/show-drink/:index' render={(props) => {
             return <BySpiritContainer 
-              drinks={this.state.bySpiritDrinks} 
-              setActive={this.setActive} 
-              bySpiritActiveDrink={this.state.bySpiritActiveDrink}
-            />
+                  {...props} 
+                  drinks={this.state.bySpiritDrinks} 
+                  bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+                />
           }} />
           <Route exact path='/by-spirit' render={() => {
-            return <BySpirit BySpiritCall={this.BySpiritCall}/>
+            return <BySpirit 
+              BySpiritCall={this.BySpiritCall}
+              resetBySpiritDrinks={this.resetBySpiritDrinks}
+            />
           }} />
           <Route path='/create-drink' render={() => {
             return <CreateDrink createDrink={this.createDrink}/>
