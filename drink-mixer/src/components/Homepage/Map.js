@@ -24,19 +24,28 @@ class Map extends Component {
     };
     render() {
         return (
-
-            <div style={{ height: '100vh', width: '100%' }}>
-                <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'AIzaSyBvIEDKHg9mF_Bs6JokbkWKDJG55STtuBQ' }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
-                >
-                    <Location
-                        lat={41.4971}
-                        lng={-90.5155}
-                        text="Casey's Tavern"
-                    />
-                </GoogleMapReact>
+            <div className='homepageCard'>
+                <div>
+                    <h1>This Weeks Spotlight</h1>
+                    <h2>Casey's Tavern</h2>
+                    <p>Come try this week's tavern spotlight!</p>
+                    <p>Are there better looking places out there? Sure!</p>
+                    <p>Is the food good? Not really.... but its edible.</p>
+                    <p>But where else would you go at 3am? Its an experience.</p>
+                </div>
+                <div style={{ height: '50vh', width: '100%' }}>
+                    <GoogleMapReact
+                        bootstrapURLKeys={{ key: 'AIzaSyBvIEDKHg9mF_Bs6JokbkWKDJG55STtuBQ' }}
+                        defaultCenter={this.props.center}
+                        defaultZoom={this.props.zoom}
+                    >
+                        <Location
+                            lat={41.4971}
+                            lng={-90.5155}
+                            text="Casey's Tavern"
+                        />
+                    </GoogleMapReact>
+                </div>
             </div>
         );
     }

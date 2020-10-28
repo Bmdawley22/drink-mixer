@@ -326,3 +326,10 @@ footer {
   font-size: 15px;
   text-align: right;
 }
+
+.homepageCard {
+  display: flex;
+  flex-flow: row;
+  width: 90vw;
+  height: 50vh;
+}

@@ -3,16 +3,17 @@ import React from 'react';
 
 // import Map
 import Map from './Map';
+import DrinkOfTheWeek from './DrinkOfTheWeek';
+
+
+
 
 // function base
-const Homepage = () => {
+const Homepage = (props) => {
     return (
         <div>
-            <h1>HELLO</h1>
-            <h1>This Weeks Spotlight Tavern</h1>
-            <h2>Casey's Tavern</h2>
-            <Map />
-        
+            {/* <Map /> */}
+            <DrinkOfTheWeek drink={props.drink} />
         </div>
     )
 }
