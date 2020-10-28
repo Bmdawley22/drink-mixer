@@ -1,3 +1,8 @@
+// const drinks = firebase.database();
+// const drink = drinks.ref('drinks');
+// drink.push({ ...this.state.drinks[0]});
+
+
 const drinks = [{
     dateModified: "2017-01-28 16:34:43",
     idDrink: "15328",
