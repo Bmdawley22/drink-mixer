@@ -333,3 +333,29 @@ footer {
   width: 90vw;
   height: 50vh;
 }
+
+.homepageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepageIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepageContainer button:first-of-type{
+  height: 30px;
+  position: fixed;
+  left:0;
+  top: 50vh;
+}
+
+.homepageContainer button:last-of-type{
+  height: 30px;
+  position: fixed;
+  right:0;
+  top: 50vh;
+}
