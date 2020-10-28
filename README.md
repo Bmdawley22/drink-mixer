@@ -67,6 +67,9 @@
 * React Router
 * React Router Dom
 * Axios
+* Google-Map-React
+* @iconify/react
+* @iconify/icons-mdi
 
 ## Contribute
 - **Source Code:** https://github.com/Bmdawley22/drink-mixer

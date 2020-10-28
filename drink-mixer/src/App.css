@@ -16,6 +16,16 @@ header h1 {
   margin: 0px;
 }
 
+.pin-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.pin-text {
+  font-size: 30px;
+  margin: 0px;
+}
+
 .title {
   text-decoration: none;
   color: black;
@@ -315,4 +325,65 @@ footer {
   font-family: Shadows Into Light, Arial, sans-serif;
   font-size: 15px;
   text-align: right;
+}
+
+.homepageCard {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 60vh;
+  background-color: #797A7E;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  overflow-y:auto;
+  overflow-x:auto;
+  color: white;
+}
+
+.homepageCardMap {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 60vh;
+  background-color: #797A7E;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  overflow-y:auto;
+  overflow-x:auto;
+  color: white;
+}
+
+
+
+.homepageContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.homepageIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepageContainer button:first-of-type{
+  height: 30px;
+  position: fixed;
+  left:0;
+  top: 50vh;
+}
+
+.homepageContainer button:last-of-type{
+  height: 30px;
+  position: fixed;
+  right:0;
+  top: 50vh;
 }

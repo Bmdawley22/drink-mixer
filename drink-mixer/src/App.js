@@ -11,7 +11,7 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 import Header from './components/Header';
 
 // import Homepage
-import Homepage from './components/Homepage';
+import Homepage from './components/Homepage/Homepage';
 
 // import Footer
 import Footer from './components/Footer';
@@ -165,7 +165,11 @@ class App extends Component {
       <div className='App'>
         <Header />
         <Switch>
-        <Route exact path='/' component={Homepage}/>
+        <Route exact path='/' render={() => {
+            return <Homepage
+              drink={this.state.drinks[5]}
+            />
+          }} />
           <Route path='/all-drinks/show-drink/:index' render={(props) => {
             return <AllDrinkContainer 
               {...props} 
