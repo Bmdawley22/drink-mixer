@@ -1,14 +1,12 @@
 // import React
 import React, { Component } from 'react';
 
-// import Map
+// import Map, Drink of the Week, and Article for slideshow
 import Map from './Map';
 import DrinkOfTheWeek from './DrinkOfTheWeek';
+import Article from './Article';
 
-
-
-
-// function base
+// class base
 class Homepage extends Component {
     constructor(props){
         super(props);
@@ -16,40 +14,48 @@ class Homepage extends Component {
         this.state={
             renderComponent : 2,
             minRender: 1,
-            maxRender: 2
+            maxRender: 3
         }
     }
 
     changeCard=(direction)=> {
-        let renderComponent=this.state.renderComponent;
+        let renderComponent = this.state.renderComponent;
         if( renderComponent === this.state.maxRender && direction === 1) {
-            renderComponent =1;
+            renderComponent = 1;
             this.setState({
-                renderComponent:renderComponent
+                renderComponent: renderComponent
             })
         } else if (renderComponent === this.state.minRender && direction === -1) {
             renderComponent = 2;
             this.setState({
-                renderComponent:renderComponent
+                renderComponent: renderComponent
+            })
+        } else if (renderComponent === this.state.minRender && direction === -1) {
+            renderComponent = 3;
+            this.setState({
+                renderComponent: renderComponent
             })
         } else {
             this.setState({
-                renderComponent:renderComponent+direction
+                renderComponent: renderComponent + direction
             })
         }
     }
     render(){
         return (
             <div>
+                <h1 className='homepageTitle'>This Weeks Spotlight</h1>
                 <div className='homepageContainer'>
                     <button onClick={()=> this.changeCard(-1)}>&#10094;</button>
                     {this.state.renderComponent === 1 && <Map />}
                     {this.state.renderComponent === 2 && <DrinkOfTheWeek drink={this.props.drink} />}
+                    {this.state.renderComponent === 3 && <Article />}
                     <button onClick={()=> this.changeCard(1)}>&#10095;</button>
                 </div>
                 <div className='homepageIndicator'>
                     {this.state.renderComponent===1 ? <div>&#9899;</div>:<div>&#9898;</div>}
                     {this.state.renderComponent===2 ? <div>&#9899;</div>:<div>&#9898;</div>}
+                    {this.state.renderComponent===3 ? <div>&#9899;</div>:<div>&#9898;</div>}
                 </div>
             </div>
         )

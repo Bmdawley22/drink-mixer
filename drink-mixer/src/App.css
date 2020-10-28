@@ -195,6 +195,7 @@ button {
   justify-content: left;
   margin-top: 30px;
 }
+
 .drinkLink {
   background-color: #797a7e;
   border: solid white 5px;
@@ -204,18 +205,19 @@ button {
   text-decoration: none;
   color: white;
 }
+
 .drinkLink:hover {
   background-color: white;
   border: solid #797A7E 5px;
   color: #797A7E;
 }
+
 .drinkBoard img {
   object-fit: fill;
   width: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-
 
 .randomDrinkContainer {
   display: flex;
@@ -392,7 +394,20 @@ footer {
   color: white;
 }
 
+.homepageTitle {
+  text-align: center;
+  margin-bottom: 5px;
+}
 
+.articleImg {
+  height: 200px;
+  width: auto;
+}
+
+.articleLink {
+  text-decoration: underline;
+  color: white;
+}
 
 .homepageContainer {
   display: flex;

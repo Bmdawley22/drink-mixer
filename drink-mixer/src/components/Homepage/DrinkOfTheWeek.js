@@ -9,6 +9,7 @@ import ratingStarHalf from '@iconify/icons-mdi/star-half';
 function DrinkOfTheWeek(props) {
     return(
         <div className='homepageCard'>
+            <h1>Drink of the Week:</h1>
             <img src={props.drink.strDrinkThumb} alt='showDrinkImg' className='showDrinkImg' />
             <h1>{props.drink.strDrink}</h1>
             <div>
