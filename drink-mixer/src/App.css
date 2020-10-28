@@ -409,10 +409,15 @@ footer {
   color: white;
 }
 
+.articleInfo {
+  text-align: left;
+  text-indent: 25px;;
+}
+
 .homepageContainer {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 75vh;
   align-items: center;
 }
 
@@ -427,6 +432,7 @@ footer {
   position: fixed;
   left:0;
   top: 50vh;
+  margin-left: 25px;
 }
 
 .homepageContainer button:last-of-type{
@@ -434,4 +440,5 @@ footer {
   position: fixed;
   right:0;
   top: 50vh;
+  margin-right: 25px;
 }
