@@ -32,6 +32,8 @@ class Map extends Component {
                     <p>Are there better looking places out there? Sure!</p>
                     <p>Is the food good? Not really.... but its edible.</p>
                     <p>But where else would you go at 3am? Its an experience.</p>
+                    <br />
+                    <h4>Address: <br />1512 15th St, Moline, Ill. 61265</h4>
                 </div>
                 <div style={{ height: '50vh', width: '100%' }}>
                     <GoogleMapReact

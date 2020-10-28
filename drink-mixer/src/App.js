@@ -27,8 +27,11 @@ import BySpiritContainer from './components/BySpirit/BySpiritContainer';
 import AllDrinks from './components/AllDrinks/AllDrinks';
 import AllDrinkContainer from './components/AllDrinks/AllDrinkContainer';
 
-// importing Random Drink
+// import Random Drink
 import RandomDrink from './components/RandomDrink/RandomDrink';
+
+// import App Entry
+import AppEntry from './components/Homepage/AppEntry';
 
 // import for API
 import axios from 'axios';
@@ -160,57 +163,66 @@ class App extends Component {
     }
   }
 
+  // date entry check
+  dateEntryCheck = (e, date) => {
+    e.preventDefault();
+
+    
+  }
+
   render () {
     return (
       <div className='App'>
         <Header />
-        <Switch>
-        <Route exact path='/' render={() => {
-            return <Homepage
-              drink={this.state.drinks[5]}
-            />
-          }} />
-          <Route path='/all-drinks/show-drink/:index' render={(props) => {
-            return <AllDrinkContainer 
-              {...props} 
-              drinks={this.state.drinks} 
-              setActive={this.setActive} 
-              activeDrinkId={this.state.activeDrinkId}
-            />
-          }} />
-          <Route exact path='/all-drinks' render={() => {
-            return <AllDrinks 
-              drinks={this.state.drinks} 
-              setActive={this.setActive}
-            />
-          }} />
-          <Route path='/random-drink' render={() => {
-            return <RandomDrink 
-              randomDrink={this.state.randomDrink} 
-              onClick={() => this.componentDidMount()} 
-              addRandomDrink={this.addDrink} 
-              message={this.state.message}
-            />
-          }} />
-          <Route path='/by-spirit/show-drink/:index' render={(props) => {
-            return <BySpiritContainer 
-              {...props} 
-              drinks={this.state.bySpiritDrinks} 
-              bySpiritActiveDrink={this.state.bySpiritActiveDrink}
-              addDrink={this.addDrink} 
-              message={this.state.message}
-            />
-          }} />
-          <Route exact path='/by-spirit' render={() => {
-            return <BySpirit 
-              BySpiritCall={this.BySpiritCall}
-              resetBySpiritDrinks={this.resetBySpiritDrinks}
-            />
-          }} />
-          <Route path='/create-drink' render={() => {
-            return <CreateDrink createDrink={this.createDrink}/>
-          }} />
-        </Switch>
+        <AppEntry>
+          <Switch>
+          <Route exact path='/' render={() => {
+              return <Homepage
+                drink={this.state.drinks[5]}
+              />
+            }} />
+            <Route path='/all-drinks/show-drink/:index' render={(props) => {
+              return <AllDrinkContainer 
+                {...props} 
+                drinks={this.state.drinks} 
+                setActive={this.setActive} 
+                activeDrinkId={this.state.activeDrinkId}
+              />
+            }} />
+            <Route exact path='/all-drinks' render={() => {
+              return <AllDrinks 
+                drinks={this.state.drinks} 
+                setActive={this.setActive}
+              />
+            }} />
+            <Route path='/random-drink' render={() => {
+              return <RandomDrink 
+                randomDrink={this.state.randomDrink} 
+                onClick={() => this.componentDidMount()} 
+                addRandomDrink={this.addDrink} 
+                message={this.state.message}
+              />
+            }} />
+            <Route path='/by-spirit/show-drink/:index' render={(props) => {
+              return <BySpiritContainer 
+                {...props} 
+                drinks={this.state.bySpiritDrinks} 
+                bySpiritActiveDrink={this.state.bySpiritActiveDrink}
+                addDrink={this.addDrink} 
+                message={this.state.message}
+              />
+            }} />
+            <Route exact path='/by-spirit' render={() => {
+              return <BySpirit 
+                BySpiritCall={this.BySpiritCall}
+                resetBySpiritDrinks={this.resetBySpiritDrinks}
+              />
+            }} />
+            <Route path='/create-drink' render={() => {
+              return <CreateDrink createDrink={this.createDrink}/>
+            }} />
+          </Switch>
+        </AppEntry>
         <Footer />
       </div>
     )
