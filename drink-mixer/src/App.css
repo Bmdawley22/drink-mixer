@@ -221,6 +221,7 @@ button {
   display: flex;
   flex-flow: column;
   align-items: center;
+  
 }
 
 .randomDrinkWrapper {
@@ -230,9 +231,32 @@ button {
   width: 800px;
 }
 
+.randomDrink {
+  width: 50vw;
+  height: 55vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 white;
+  background: #797a7e;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  .randomDrinkWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .random-ingredient-container {
   display: flex;
   flex-flow: row;
+  text-align: center;
 }
 
 h3 {
@@ -241,19 +265,28 @@ h3 {
   margin-left: 10px;
 }
 
+.randomDrinkWrapper h2 {
+  text-align: left;
+  padding: 10px;
+}
+
 .randomIngredient {
   list-style: none;
   padding-left: 8px;
+  text-align: left;
 }
 
 .randomMeasure {
   list-style: none;
   padding-left: 10px;
+  text-align: left;
 }
 
-p {
+.randomDirections {
   margin-top: 10px;
   padding-left: 10px;
+  text-align: left;
+  text-indent: 25px;
 }
 
 .randomImage {
