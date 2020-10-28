@@ -329,14 +329,40 @@ footer {
 
 .homepageCard {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   width: 90vw;
-  height: 50vh;
+  height: 60vh;
+  background-color: #797A7E;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  overflow-y:auto;
+  overflow-x:auto;
 }
+
+.homepageCardMap {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 60vh;
+  background-color: #797A7E;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  overflow-y:auto;
+  overflow-x:auto;
+}
+
+
 
 .homepageContainer {
   display: flex;
   justify-content: center;
+  height: 100vh;
   align-items: center;
 }
 

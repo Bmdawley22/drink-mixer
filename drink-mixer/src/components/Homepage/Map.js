@@ -24,7 +24,7 @@ class Map extends Component {
     };
     render() {
         return (
-            <div className='homepageCard'>
+            <div className='homepageCardMap'>
                 <div>
                     <h1>This Weeks Spotlight</h1>
                     <h2>Casey's Tavern</h2>
