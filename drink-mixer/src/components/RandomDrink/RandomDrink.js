@@ -48,7 +48,7 @@ const RandomDrink = (props) => {
                             </div>
                         </div>
                         <h2>Directions: </h2>   
-                        <p>{props.randomDrink.strInstructions}</p>
+                        <p className='randomDirections'>{props.randomDrink.strInstructions}</p>
                     </div>
                 </div>
                 <button onClick={() => props.addRandomDrink()}>Add Drink</button>

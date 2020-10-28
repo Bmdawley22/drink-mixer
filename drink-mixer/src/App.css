@@ -218,6 +218,15 @@ button {
   color: white;
   border-radius: 10px;
   text-align: center;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  .randomDrinkWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .random-ingredient-container {
@@ -233,22 +242,27 @@ h3 {
 }
 
 .randomDrinkWrapper h2 {
-  text-align: center;
+  text-align: left;
+  padding: 10px;
 }
 
 .randomIngredient {
   list-style: none;
   padding-left: 8px;
+  text-align: left;
 }
 
 .randomMeasure {
   list-style: none;
   padding-left: 10px;
+  text-align: left;
 }
 
-p {
+.randomDirections {
   margin-top: 10px;
   padding-left: 10px;
+  text-align: left;
+  text-indent: 25px;
 }
 
 .randomImage {
