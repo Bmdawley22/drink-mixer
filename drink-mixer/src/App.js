@@ -11,7 +11,7 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 import Header from './components/Header';
 
 // import Homepage
-import Homepage from './components/Homepage';
+import Homepage from './components/Homepage/Homepage';
 
 // import Footer
 import Footer from './components/Footer';

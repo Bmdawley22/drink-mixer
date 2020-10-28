@@ -4,7 +4,15 @@ import React, { Component } from 'react';
 // import Google Maps
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import { Icon } from '@iconify/react'
+import locationIcon from '@iconify/icons-mdi/map-marker'
+
+const Location = ({ text }) => (
+    <div>
+        <Icon icon={locationIcon} className="pin-icon" />
+        <h3 className="pin-text">{text}</h3>
+    </div>
+)
 
 class Map extends Component {
     static defaultProps = {
@@ -23,7 +31,7 @@ class Map extends Component {
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
-                    <AnyReactComponent
+                    <Location
                         lat={41.4971}
                         lng={-90.5155}
                         text="Casey's Tavern"
