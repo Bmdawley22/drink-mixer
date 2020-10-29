@@ -355,14 +355,19 @@ h3 {
   box-shadow: 0 8px 16px 0 white;
   border-radius: 10px;
   width: 60vw;
-  height: 50vh;
+  height: 60vh;
   overflow-y: auto;
 }
 
+
 .createDrink input, .createDrink span {
-  margin: 10px;
-  font-size: 20px;
-  color: white
+  font-size: 25px;
+  color: white;
+  margin-bottom: 10px;
+}
+.createDrink span {
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .createDrink input {
@@ -370,6 +375,22 @@ h3 {
   color: black;
   border-radius: 5px;
 }
+.submitDiv {
+  display: flex;
+  justify-content: center;
+}
+.createButton {
+  font-size: 30px;
+  width: 60%;
+  margin: 10px auto;
+}
+
+.createButton:hover{
+  background-color: #797A7E;
+  color: white;
+  border: 2px solid white;
+}
+
 
 .addIngredient {
   height: 170px;

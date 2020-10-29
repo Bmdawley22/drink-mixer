@@ -45,7 +45,9 @@ class CreateDrink extends Component {
                 <h1>Create Drink</h1>
                 <div className='createDrink'>
                 <form onSubmit={(e) => this.props.createDrink(e, this.state)}>
-                    <input type='submit' />
+                    <div className='submitDiv'>
+                        <input type='submit' value='Create New Drink!' className='createButton'/>
+                    </div>
                     <br/>
                     <span>Drink Name</span>
                     <input type='text' name='strDrink' onChange={this.onChange}/>  
@@ -57,17 +59,17 @@ class CreateDrink extends Component {
                     <span>Instructions</span>
                     <input type='textarea' name='strInstructions' onChange={this.onChange}/>
                     <br/>
-                    <span>Ingredients (Ingredient, amount)</span>
+                    <span>Ingredients (Ingredient, amount)</span><br/>
                     <div className='addIngredient'>
-                    {this.state.ingredientsNum.map((ingredient, id) => {
-                        return (
-                            <div>
-                                <input type='text' name={`strMeasure${id+1}`} placeholder='ingredient'  onChange={this.onChange}/>
-                                <input type='text' name={`strIngredient${id+1}`} placeholder='amount' onChange={this.onChange}/>
-                                <br /> 
-                            </div>
-                        )
-                    })}  
+                        {this.state.ingredientsNum.map((ingredient, id) => {
+                            return (
+                                <div>
+                                    <input type='text' name={`strMeasure${id+1}`} placeholder='ingredient'  onChange={this.onChange}/>
+                                    <input type='text' name={`strIngredient${id+1}`} placeholder='amount' onChange={this.onChange}/>
+                                    <br /> 
+                                </div>
+                            )
+                        })}  
                     </div>
                 </form>
                 
