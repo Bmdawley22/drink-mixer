@@ -337,6 +337,10 @@ h3 {
   align-self: flex-start;
 }
 
+.randomDrinkMessage {
+  height: 20px;
+}
+
 .createDrinkWrapper {
   display: flex;
   justify-content: center;

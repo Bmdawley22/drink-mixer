@@ -122,7 +122,7 @@ class App extends Component {
     }) 
 
     // call the reset message function to timeout after 3 seconds of being displayed to the user
-    setTimeout(this.resetMessage, 3000);
+    setTimeout(this.resetMessage, 2000);
   }
 
   // reset message after 3 seconds of message being displayed
@@ -150,6 +150,7 @@ class App extends Component {
 
   // Random Drink API call
    randonDrinkCall= async (e) => {
+    this.resetMessage()
     try {
       const response = await axios(URL);
 

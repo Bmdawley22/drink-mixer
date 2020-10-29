@@ -24,7 +24,7 @@ const RandomDrink = (props) => {
                 <button onClick={() => props.randomDrinkCall()}>Random Drink</button>
                 <button onClick={() => props.addRandomDrink()}>Add Drink</button>
             </div>
-            {props.message && <h3>{props.message}</h3>}
+            <h3 className='randomDrinkMessage'>{props.message}</h3>
             <div className='randomDrink'>
                 <h1>{props.randomDrink.strDrink}</h1>
                 <div className='randomDrinkWrapper'>
