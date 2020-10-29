@@ -53,8 +53,15 @@ class App extends Component {
       activeDrinkId: null,
       message: '',
       bySpiritActiveDrink: {},
-      bySpiritDrinks: []
+      bySpiritDrinks: [],
+      ageVerified: false
     }
+  }
+
+  verifyAge = () => {
+    this.setState({
+      ageVerified:true
+    })
   }
 
   // setting the active tab for the list page
@@ -182,12 +189,17 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <Header />
+        <Header ageVerified={this.state.ageVerified}/>
           <Switch>
-            <Route exact path='/' component={AppEntry} />
+            <Route exact path='/' render={() => {
+              return <AppEntry
+                verifyAge={this.verifyAge}
+              />
+            }} />
             <Route exact path='/homepage' render={() => {
               return <Homepage
                 drink={this.state.drinks[5]}
+                ageVerified={this.state.ageVerified}
               />
             }} />
             <Route path='/all-drinks/show-drink/:index' render={(props) => {

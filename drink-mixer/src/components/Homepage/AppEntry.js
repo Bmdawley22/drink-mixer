@@ -46,18 +46,19 @@ class AppEntry extends Component {
 
         if ((yy - this.state.year) > 20) {
             // rendering to homepage after submitting
+            this.props.verifyAge();
             this.props.history.push('/homepage');
         } else if(yy - this.state.year === 21) {
             if (mm > this.state.month) {
                 // rendering to homepage after submitting
+                this.props.verifyAge();
                 this.props.history.push('/homepage');
-
             } else if (mm === this.state.month) {
                 if (dd > this.state.date) {
 
                     // rendering to homepage after submitting
+                    this.props.verifyAge();
                     this.props.history.push('/homepage');
-
                 } else {
                     this.setState({
                         message: 'You are not old enough to enter!; Please try again when you are 21.'
