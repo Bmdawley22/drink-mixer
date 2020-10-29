@@ -14,6 +14,7 @@ const Location = ({ text }) => (
     </div>
 )
 
+// class base
 class Map extends Component {
     static defaultProps = {
         center: {
@@ -26,12 +27,13 @@ class Map extends Component {
         return (
             <div className='homepageCardMap'>
                 <div>
-                    <h1>This Weeks Spotlight</h1>
                     <h2>Casey's Tavern</h2>
                     <p>Come try this week's tavern spotlight!</p>
                     <p>Are there better looking places out there? Sure!</p>
                     <p>Is the food good? Not really.... but its edible.</p>
                     <p>But where else would you go at 3am? Its an experience.</p>
+                    <br />
+                    <h4>Address: <br />1512 15th St, Moline, Ill. 61265</h4>
                 </div>
                 <div style={{ height: '50vh', width: '100%' }}>
                     <GoogleMapReact
