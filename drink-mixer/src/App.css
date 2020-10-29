@@ -163,6 +163,8 @@ button:hover, .Link:hover {
   flex-flow: column;
 }
 
+
+
 .drinksList a {
   text-decoration: none;
   color: black;
@@ -173,6 +175,13 @@ button:hover, .Link:hover {
   display: flex;
   flex-flow: row;
   align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .listItem {
+    flex-flow: column;
+    height: 200px;
+  }
 }
 
 .listItem:hover {
@@ -297,8 +306,8 @@ button {
 .drinkBoard img {
   object-fit: fill;
   width: 200px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .randomDrinkContainer {
@@ -311,8 +320,8 @@ button {
 .randomDrinkWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: left;
+  width: 95%;
 }
 
 .randomDrink {
@@ -373,6 +382,7 @@ h3 {
   padding-left: 10px;
   text-align: left;
   text-indent: 25px;
+  width: 80%;
 }
 
 .randomImage {
@@ -381,6 +391,10 @@ h3 {
   object-fit: contain;
   height: auto;
   align-self: flex-start;
+}
+
+.randomDrinkMessage {
+  height: 20px;
 }
 
 .createDrinkWrapper {
