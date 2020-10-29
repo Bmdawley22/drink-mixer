@@ -85,6 +85,7 @@ class AppEntry extends Component {
     render() {
         return (
             <div className='appEntry'>
+                <img src='https://images-na.ssl-images-amazon.com/images/I/610V3qI8M2L._AC_SX522_.jpg' alt='McLovin'/>
                 <h1>Welcome to Drink Mixer!</h1>
                 <h2>Please enter your birthday to enter website:</h2>
                 <h4>Note: 21 and older ONLY!</h4>
