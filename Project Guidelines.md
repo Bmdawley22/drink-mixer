@@ -67,8 +67,8 @@
         4. Use Google Maps to find a near store or brewery
     * Styling: User friendly UI with clean layout and display
 
+## Components:
 
-# Components
 -   Header
 -   Footer
 -   RandomDrink
@@ -77,3 +77,15 @@
 -   ShowPage
 -   App
     * All methods will live in App
+
+## User Stories:
+
+* As a user, I want to create a new drink, so that I can create the best drink.
+
+* As a user, I want to search by spirits, so that I can make a drink based on the ingredients I have.
+
+* As a user, I want to see directions, so that I can make the drink.
+
+* As a user, I want to add a drink, so that I can always find all my favorite drinks. 
+
+* As a user, I want to see a random drink, so that I can try a drink I have never had before.
