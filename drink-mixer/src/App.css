@@ -202,9 +202,15 @@ button:hover, .Link:hover {
 
 .addDrinkButton {
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   margin-left: 10vw;
+}
+
+.addDrinkMessage h3 {
+  margin-top: 2px;
+  margin-bottom: 0px;
 }
 
 .showDirections {

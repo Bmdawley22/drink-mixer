@@ -16,7 +16,9 @@ function Show(props) {
         <div>
             <div className='addDrinkButton'>
                 {props.message !== undefined && <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>}
-                {props.message && <h3>{props.message}</h3>}
+                <div className='addDrinkMessage'>
+                    <h3>{props.message}</h3>
+                </div>
             </div>
             <div className='drinksShow'>
                 <img src={props.drink.strDrinkThumb} alt='showDrinkImg' className='showDrinkImg' />
