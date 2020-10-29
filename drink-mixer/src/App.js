@@ -147,7 +147,7 @@ class App extends Component {
   }
 
   // Random Drink API call
-  async componentDidMount() {
+  async randonDrinkCall() {
     const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
     try {
@@ -161,15 +161,17 @@ class App extends Component {
         apiDataError: true
       })
     }
+  }
 
-    
+  async componentDidMount() {
+    this.randomDrinkCall()    
   }
 
   // date entry check
   dateEntryCheck = (e, date) => {
     e.preventDefault();
 
-    
+
   }
 
   render () {
@@ -200,7 +202,7 @@ class App extends Component {
             <Route path='/random-drink' render={() => {
               return <RandomDrink 
                 randomDrink={this.state.randomDrink} 
-                onClick={() => this.componentDidMount()} 
+                randomDrinkCall={this.randonDrinkCall} 
                 addRandomDrink={this.addDrink} 
                 message={this.state.message}
               />

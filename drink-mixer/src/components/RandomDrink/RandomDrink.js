@@ -20,7 +20,7 @@ const RandomDrink = (props) => {
     return (
         <div className='randomDrinkContainer'>
             <h1>Random Drink Generator</h1>
-            <button onClick={props.onClick}>Random Drink</button>
+            <button onClick={() => props.randomDrinkCall()}>Random Drink</button>
             <div className='randomDrink'>
                 <h1>{props.randomDrink.strDrink}</h1>
                 <div className='randomDrinkWrapper'>
