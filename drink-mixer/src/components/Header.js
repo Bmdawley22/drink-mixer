@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
     return (
         <header>
-            <Link className='title' to={props.ageVerified ? '/homepage' : '/'}><h1>Drink Mixer</h1></Link>
+            <Link className='title' to={props.ageVerified ? '/homepage' : '/'} onClick={() => props.highlightLink(0)}><h1>Drink Mixer</h1></Link>
             {props.ageVerified  && <nav>
                 <Link 
                     onClick={() => props.highlightLink(1)}
