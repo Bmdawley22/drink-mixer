@@ -175,4 +175,4 @@ https://github.com/Bmdawley22/drink-mixer/issues
 
 ## Disclaimer
 
-**NOTE: PLEASE DRINK RESPONSIBLY**
+**PLEASE DRINK RESPONSIBLY**
