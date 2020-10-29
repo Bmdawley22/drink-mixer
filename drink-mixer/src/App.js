@@ -39,6 +39,8 @@ import axios from 'axios';
 // import data for all drinks
 import drinks from './data';
 
+const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+
 // class base
 class App extends Component {
   constructor(props) {
@@ -147,9 +149,7 @@ class App extends Component {
   }
 
   // Random Drink API call
-  async randonDrinkCall() {
-    const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-
+   randonDrinkCall= async (e) => {
     try {
       const response = await axios(URL);
 
@@ -164,7 +164,17 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    this.randomDrinkCall()    
+    try {
+      const response = await axios(URL);
+
+      this.setState({
+        randomDrink: response.data.drinks[0]
+      })
+    } catch (e) {
+      this.setState({
+        apiDataError: true
+      })
+    }    
   }
 
 
