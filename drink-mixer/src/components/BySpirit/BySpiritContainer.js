@@ -35,7 +35,9 @@ class BySpiritContainer extends Component {
                         drink={this.state.activeDrink} 
                         addDrink={this.props.addDrink} 
                         message={this.props.message}
-                    /> : <p>Click drink to see more</p>}
+                    /> : <div className='spiritMessageContainer'> 
+                            <p className='spiritDisplayMessage'>Select Drink to Learn More</p> 
+                        </div> }
             </div>
         )
     }
