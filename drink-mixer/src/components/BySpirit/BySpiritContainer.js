@@ -13,6 +13,7 @@ class BySpiritContainer extends Component {
             activeDrinkId: null
         }
     }
+    
     onListClick = async (id, idDrink) => {
         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
         const activeDrink = resp.data.drinks[0];

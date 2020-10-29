@@ -46,6 +46,7 @@ class BySpirit extends Component {
             ]
         }
     }
+    
     handleClick = (id) => {
         const category = this.state.categories[id].name;
         this.props.BySpiritCall(category); 
@@ -54,6 +55,7 @@ class BySpirit extends Component {
     componentDidMount = () => {
         this.props.resetBySpiritDrinks();
     } 
+
     render() {
         return (
             <div className='drinkBoardWrapper'>
