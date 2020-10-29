@@ -211,6 +211,8 @@ button:hover, .Link:hover {
 .addDrinkMessage h3 {
   margin-top: 2px;
   margin-bottom: 0px;
+  width: 30vw;
+  text-align: center;
 }
 
 .showDirections {
