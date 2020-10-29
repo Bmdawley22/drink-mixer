@@ -18,6 +18,7 @@
 * Issue and Resolutions
 * Submit a Ticket
 * Resources
+* Disclaimer 
 
 ## Wireframe
 * All Drinks: <br />
@@ -171,5 +172,7 @@ https://github.com/Bmdawley22/drink-mixer/issues
     - Isha Arora
     - Leah Mattern
 * SEI Classmates
+
+## Disclaimer
 
 **NOTE: PLEASE DRINK RESPONSIBLY**
