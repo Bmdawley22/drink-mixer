@@ -22,9 +22,9 @@ class AppEntry extends Component {
         super(props)
 
         this.state = {
-            month: '',
-            day: '',
-            year: '',
+            month: null,
+            day: null,
+            year: null,
             message: ''
         }
     }
@@ -48,24 +48,30 @@ class AppEntry extends Component {
         let mm = today.getMonth() + 1;
         let yy = today.getFullYear();
 
-        if ((yy - this.state.year) > 20) {
-            // rendering to homepage after submitting
-            this.props.verifyAge();
-            this.props.history.push('/homepage');
-        } else if(yy - this.state.year === 21) {
-            if (mm > this.state.month) {
+        if(this.state.day && this.state.month && this.state.year) {
+            if ((yy - this.state.year) > 20) {
                 // rendering to homepage after submitting
                 this.props.verifyAge();
                 this.props.history.push('/homepage');
-            } else if (mm === this.state.month) {
-                if (dd > this.state.date) {
-
+            } else if(yy - this.state.year === 21) {
+                if (mm > this.state.month) {
                     // rendering to homepage after submitting
                     this.props.verifyAge();
                     this.props.history.push('/homepage');
+                } else if (mm === this.state.month) {
+                    if (dd > this.state.date) {
+
+                        // rendering to homepage after submitting
+                        this.props.verifyAge();
+                        this.props.history.push('/homepage');
+                    } else {
+                        this.setState({
+                            message: 'You are not old enough to enter!; Please try again when you are 21.'
+                        })
+                    }
                 } else {
                     this.setState({
-                        message: 'You are not old enough to enter!; Please try again when you are 21.'
+                        message: 'You are not old enough to enter! Please try again when you are 21.'
                     })
                 }
             } else {
@@ -73,10 +79,6 @@ class AppEntry extends Component {
                     message: 'You are not old enough to enter! Please try again when you are 21.'
                 })
             }
-        } else {
-            this.setState({
-                message: 'You are not old enough to enter! Please try again when you are 21.'
-            })
         }
     }
 
