@@ -163,20 +163,13 @@ class App extends Component {
     }
   }
 
-  // date entry check
-  dateEntryCheck = (e, date) => {
-    e.preventDefault();
-
-    
-  }
-
   render () {
     return (
       <div className='App'>
         <Header />
-        <AppEntry>
           <Switch>
-          <Route exact path='/' render={() => {
+            <Route exact path='/' component={AppEntry} />
+            <Route exact path='/homepage' render={() => {
               return <Homepage
                 drink={this.state.drinks[5]}
               />
@@ -222,7 +215,6 @@ class App extends Component {
               return <CreateDrink createDrink={this.createDrink}/>
             }} />
           </Switch>
-        </AppEntry>
         <Footer />
       </div>
     )
