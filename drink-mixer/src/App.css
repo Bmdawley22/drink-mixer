@@ -47,6 +47,7 @@ nav {
   width: 60vw;
 }
 
+
 nav .Link {
   text-decoration: none;
   background-color: #797A7E;
@@ -55,6 +56,7 @@ nav .Link {
   border-radius: 5px;
   font-size: 2.5vh;
 }
+
 @media (max-width: 1100px) {
   header h1 { 
     font-size: 5vh;
@@ -597,4 +599,13 @@ footer {
   margin-right: 25px;
   font-size: 50px;
   opacity: 0.5;
+}
+
+.active-page {
+  text-decoration: none;
+  background-color: #d8d3cd;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 2.5vh;
 }

@@ -54,7 +54,8 @@ class App extends Component {
       message: '',
       bySpiritActiveDrink: {},
       bySpiritDrinks: [],
-      ageVerified: false
+      ageVerified: true,
+      activePage: 0
     }
   }
 
@@ -155,6 +156,10 @@ class App extends Component {
     this.props.history.push('/all-drinks');
   }
 
+  highlightLink = (page) => {
+    this.setState({ activePage: page });
+  }
+
   // Random Drink API call
    randonDrinkCall= async (e) => {
     this.resetMessage()
@@ -170,6 +175,8 @@ class App extends Component {
       })
     }
   }
+
+  
 
   async componentDidMount() {
     try {
@@ -187,9 +194,14 @@ class App extends Component {
 
 
   render () {
+    console.log(this.state.activePage)
     return (
       <div className='App'>
-        <Header ageVerified={this.state.ageVerified}/>
+        <Header 
+          ageVerified={this.state.ageVerified}
+          activePage={this.state.activePage}  
+          highlightLink={this.highlightLink}
+        />
           <Switch>
             <Route exact path='/' render={() => {
               return <AppEntry
