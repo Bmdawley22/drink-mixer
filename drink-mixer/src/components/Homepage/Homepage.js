@@ -26,7 +26,7 @@ class Homepage extends Component {
                 renderComponent: renderComponent
             })
         } else if (renderComponent === this.state.minRender && direction === -1) {
-            renderComponent = 2;
+            renderComponent = 3;
             this.setState({
                 renderComponent: renderComponent
             })
