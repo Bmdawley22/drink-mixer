@@ -24,14 +24,14 @@ class CreateDrink extends Component {
     // adding additional input boxes for the ingredients if needed on button click
     changeIngredient = (change) => {
         let ingredientsNum = this.state.ingredientsNum;
-        if (ingredientsNum.length < 15 && change > 1) {
+        if (ingredientsNum.length < 15 && change > 0) {
             ingredientsNum.push(`strIngredient${ingredientsNum.length + change}`)
 
             this.setState({
                 ingredientsNum
             })
-        } else if (ingredientsNum.length > 1 && change < 1) {
-            ingredientsNum.push(`strIngredient${ingredientsNum.length + change}`)
+        } else if (ingredientsNum.length > 1 && change < 0) {
+            ingredientsNum.pop()
 
             this.setState({
                 ingredientsNum
@@ -70,8 +70,11 @@ class CreateDrink extends Component {
                     })}  
                     </div>
                 </form>
-                <button onClick={() => this.changeIngredient(+1)}>Add ingredient line</button> 
-                <button onClick={() => this.changeIngredient(-1)}>Remove ingredient line</button> 
+                
+                </div>
+                <div className='ingredientButtons'>
+                    <button onClick={() => this.changeIngredient(+1)}>Add ingredient line</button> 
+                    <button onClick={() => this.changeIngredient(-1)}>Remove ingredient line</button> 
                 </div>
             </div>
         )
