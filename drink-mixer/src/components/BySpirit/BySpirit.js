@@ -56,22 +56,26 @@ class BySpirit extends Component {
     } 
     render() {
         return (
-            <div className='drinkBoard' >
-                {this.state.categories.map((category, id) => (
-                    <Link 
-                        onClick={() => this.handleClick(id)} 
-                        key={id}
-                        to='/by-spirit/show-drink/0'
-                        className='drinkLink'
-                    >
-                         <img
-                            src={category.img} 
-                            alt={category.name}
-                        />
-                         <h3 className='drinkName'>{category.name}</h3>
-                    </Link>
-                ))}
-            </div> 
+            <div className='drinkBoardWrapper'>
+                <h2>Drink By Spirit</h2>
+                <div className='drinkBoard' >
+                    
+                    {this.state.categories.map((category, id) => (
+                        <Link 
+                            onClick={() => this.handleClick(id)} 
+                            key={id}
+                            to='/by-spirit/show-drink/0'
+                            className='drinkLink'
+                        >
+                            <img
+                                src={category.img} 
+                                alt={category.name}
+                            />
+                            <h3 className='drinkName'>{category.name}</h3>
+                        </Link>
+                    ))}
+                </div> 
+            </div>   
         )
     }
 }

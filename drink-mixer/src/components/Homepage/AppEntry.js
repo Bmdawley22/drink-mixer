@@ -39,8 +39,6 @@ class AppEntry extends Component {
     dateEntryCheck = (e) => {
         e.preventDefault();
         
-        console.log(this.state)
-
         const today = new Date();
         let dd = today.getDate();
         let mm = today.getMonth() + 1 ;
@@ -59,6 +57,7 @@ class AppEntry extends Component {
 
                     // rendering to homepage after submitting
                     this.props.history.push('/homepage');
+
                 } else {
                     this.setState({
                         message: 'You are not old enough to enter!; Please try again when you are 21.'
@@ -78,13 +77,13 @@ class AppEntry extends Component {
 
     render() {
         return (
-            <div>
+            <div className='appEntry'>
                 <h1>Welcome to Drink Mixer!</h1>
                 <h2>Please enter your birthday to enter website:</h2>
                 <h3>Note: 21 and older ONLY!</h3>
                 <form onSubmit={(e) => this.dateEntryCheck(e)}>
                     <select name='month' onChange={this.dataEntry}>
-                        <option selected disabled>Month</option>
+                        <option defaultValue>Month</option>
                         <option value='1'>January</option>
                         <option value='2'>February</option>
                         <option value='3'>March</option>
@@ -99,13 +98,13 @@ class AppEntry extends Component {
                         <option value='12'>December</option>
                     </select>
                     <select name='day' onChange={this.dataEntry}>
-                        <option selected disabled>Day</option>
+                        <option defaultValue>Day</option>
                         {day.map((date, id) => {
                             return <option key={id} value={date}>{date}</option>
                         })}
                     </select>
-                    <select name='year' onChange={this.dataEntry}>
-                        <option selected disabled>Year</option>
+                    <select name='year' onChange={this.dataEntry} >
+                        <option defaultValue>Year</option>
                         {year.map((year,id) => {
                             return <option key={id} value={year}>{year}</option>
                         })}

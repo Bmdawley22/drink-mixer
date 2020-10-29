@@ -43,7 +43,7 @@ class Homepage extends Component {
     }
     render(){
         return (
-            <div>
+            <div className='homepage'>
                 <h1 className='homepageTitle'>This Weeks Spotlight</h1>
                 <div className='homepageIndicator'>
                     {this.state.renderComponent===1 ? <div>&#9899;</div>:<div>&#9898;</div>}

@@ -18,23 +18,26 @@ class AllDrinks extends Component {
 
     render(){
         return(
-            <div className='drinkBoard'>
-                {this.state.drinks.map((drink,id)=> {
-                    return (
-                        <Link 
-                            to={'/all-drinks/show-drink/'+ id} 
-                            className='drinkLink'
-                            onClick={()=> this.props.setActive(id)}
-                            key={id}
-                        > 
-                            <img 
-                                src={drink.strDrinkThumb} 
-                                alt='all drink thumbnail' 
-                            />
-                            <h3 className='drinkName'>{drink.strDrink}</h3>
-                        </Link>
-                    )
-                })}
+            <div className='drinkBoardWrapper'>
+                <h2>All Added Drinks</h2>
+                <div className='drinkBoard'>
+                    {this.state.drinks.map((drink,id)=> {
+                        return (
+                            <Link 
+                                to={'/all-drinks/show-drink/'+ id} 
+                                className='drinkLink'
+                                onClick={()=> this.props.setActive(id)}
+                                key={id}
+                            > 
+                                <img 
+                                    src={drink.strDrinkThumb} 
+                                    alt='all drink thumbnail' 
+                                />
+                                <h3 className='drinkName'>{drink.strDrink}</h3>
+                            </Link>
+                        )
+                    })}
+                </div>
             </div>
         )    
     }
