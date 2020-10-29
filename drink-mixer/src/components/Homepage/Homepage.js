@@ -45,17 +45,17 @@ class Homepage extends Component {
         return (
             <div>
                 <h1 className='homepageTitle'>This Weeks Spotlight</h1>
+                <div className='homepageIndicator'>
+                    {this.state.renderComponent===1 ? <div>&#9899;</div>:<div>&#9898;</div>}
+                    {this.state.renderComponent===2 ? <div>&#9899;</div>:<div>&#9898;</div>}
+                    {this.state.renderComponent===3 ? <div>&#9899;</div>:<div>&#9898;</div>}
+                </div>
                 <div className='homepageContainer'>
                     <button onClick={()=> this.changeCard(-1)}>&#10094;</button>
                     {this.state.renderComponent === 1 && <Map />}
                     {this.state.renderComponent === 2 && <DrinkOfTheWeek drink={this.props.drink} />}
                     {this.state.renderComponent === 3 && <Article />}
                     <button onClick={()=> this.changeCard(1)}>&#10095;</button>
-                </div>
-                <div className='homepageIndicator'>
-                    {this.state.renderComponent===1 ? <div>&#9899;</div>:<div>&#9898;</div>}
-                    {this.state.renderComponent===2 ? <div>&#9899;</div>:<div>&#9898;</div>}
-                    {this.state.renderComponent===3 ? <div>&#9899;</div>:<div>&#9898;</div>}
                 </div>
             </div>
         )
