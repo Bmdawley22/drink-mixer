@@ -83,6 +83,7 @@ button:hover, .Link:hover {
   color: white;
   padding: 15px;
 }
+
 #categories-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -123,6 +124,28 @@ button:hover, .Link:hover {
   background-color: #797a7e;
 }
 
+.spiritMessageContainer {
+  margin: 0px auto;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 25vh;
+  background-color: #797A7E;
+  box-shadow: 0 8px 16px 0 white;
+  border-radius: 10px;
+  overflow-y: auto;
+  color: white;
+  padding: 15px;
+}
+
+.spiritDisplayMessage {
+  font-size: 30px;
+  text-align: center;
+}
+
 .drinkContainer {
   display: flex;
   flex-flow: row;
@@ -132,7 +155,7 @@ button:hover, .Link:hover {
 
 .drinksList {
   width: 30vw;
-  height: 85vh;
+  height: 81vh;
   overflow-y: auto;
   border: solid #797a7e 5px;
   margin-left: 10px;
@@ -164,7 +187,7 @@ button:hover, .Link:hover {
 
 .drinksShow {
   width: 40vw;
-  height: 75vh;
+  height: 65vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -175,6 +198,21 @@ button:hover, .Link:hover {
   padding-top: 10px;
   color: white;
   border-radius: 10px;
+}
+
+.addDrinkButton {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10vw;
+}
+
+.addDrinkMessage h3 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  width: 30vw;
+  text-align: center;
 }
 
 .showDirections {
@@ -217,11 +255,18 @@ button {
   text-align: left;
 }
 
+.drinkBoardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .drinkBoard {
   display: flex;
   flex-flow: row wrap;
   justify-content: left;
   margin-top: 30px;
+  width: 85vw;
 }
 
 .drinkLink {
@@ -248,6 +293,7 @@ button {
   text-align: center;
   font-size: 40px;
 }
+
 .drinkBoard img {
   object-fit: fill;
   width: 200px;
@@ -302,6 +348,7 @@ h3 {
   height: 40px;
   margin-bottom: 10px;
   margin-left: 10px;
+  width: 175px;
 }
 
 .randomDrinkWrapper h2 {

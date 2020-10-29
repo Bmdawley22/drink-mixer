@@ -13,6 +13,7 @@ class BySpiritContainer extends Component {
             activeDrinkId: null
         }
     }
+    
     onListClick = async (id, idDrink) => {
         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
         const activeDrink = resp.data.drinks[0];
@@ -35,7 +36,9 @@ class BySpiritContainer extends Component {
                         drink={this.state.activeDrink} 
                         addDrink={this.props.addDrink} 
                         message={this.props.message}
-                    /> : <p>Click drink to see more</p>}
+                    /> : <div className='spiritMessageContainer'> 
+                            <p className='spiritDisplayMessage'>Select Drink to Learn More</p> 
+                        </div> }
             </div>
         )
     }
