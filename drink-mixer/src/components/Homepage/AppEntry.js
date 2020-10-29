@@ -1,6 +1,17 @@
 // import React
 import React, {Component} from 'react';
 
+// creating date dropdown
+let day = [];
+for (let i = 1; i < 32; i++) {
+    day.push(i);
+}
+
+let year = [];
+for (let i = 2020; i > 1900; i--) {
+    year.push(i);
+}
+
 // class base
 class AppEntry extends Component {
     constructor(props) {
@@ -11,7 +22,7 @@ class AppEntry extends Component {
             day: '',
             year: ''
         }
-    } 
+    }
 
     // change the state to check birthday
     dataEntry = (e) => {
@@ -44,9 +55,15 @@ class AppEntry extends Component {
                     </select>
                     <select>
                         <option selected disabled>Day</option>
+                        {day.map((date, id) => {
+                            return <option key={id} value={date}>{date}</option>
+                        })}
                     </select>
                     <select>
                         <option selected disabled>Year</option>
+                        {year.map((year,id) => {
+                            return <option key={id} value={year}>{year}</option>
+                        })}
 
                     </select>
                     <input type="submit" value="Enter Drink Mixer" />
