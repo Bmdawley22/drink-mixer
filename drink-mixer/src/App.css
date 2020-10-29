@@ -265,8 +265,8 @@ button {
 .randomDrinkWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: left;
+  width: 95%;
 }
 
 .randomDrink {
@@ -326,6 +326,7 @@ h3 {
   padding-left: 10px;
   text-align: left;
   text-indent: 25px;
+  width: 80%;
 }
 
 .randomImage {
