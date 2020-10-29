@@ -1,6 +1,10 @@
+// import React
 import React from 'react';
+
+// import Link
 import { Link } from 'react-router-dom';
 
+// displaying app name and links to pages throughout app
 const Header = () => {
     return (
         <header>
@@ -15,4 +19,5 @@ const Header = () => {
     )
 }
 
+// export Header
 export default Header;

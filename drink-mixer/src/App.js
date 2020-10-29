@@ -39,9 +39,10 @@ import axios from 'axios';
 // import data for all drinks
 import drinks from './data';
 
+// URL for random drink API
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
-// class base
+// Rendering all pages throughout app and massing information to each respective page
 class App extends Component {
   constructor(props) {
     super(props)
@@ -148,7 +149,7 @@ class App extends Component {
     this.props.history.push('/all-drinks');
   }
 
-  // Random Drink API call
+  // Random Drink API call when random drink button is clicked
    randonDrinkCall= async (e) => {
     try {
       const response = await axios(URL);
@@ -163,6 +164,7 @@ class App extends Component {
     }
   }
 
+  // Random Drink API call for initial page loading
   async componentDidMount() {
     try {
       const response = await axios(URL);
@@ -236,5 +238,5 @@ class App extends Component {
   }
 }
 
+// export App
 export default withRouter(App);
-

@@ -1,8 +1,11 @@
 // import React 
 import React from 'react';
 
-// function base
+// displaying a random drink based on the API call
+//      Allowing user to click a random drink button to call the API to 
+//      display a new random drink and user can add the drink to the all drinks list
 const RandomDrink = (props) => {
+
     // creating a new array for just the ingredients in each random drink
     let ingredients = [];
     for (let i = 1; i < 16; i++) {

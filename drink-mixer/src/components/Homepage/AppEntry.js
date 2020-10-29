@@ -10,12 +10,15 @@ for (let i = 1; i < 32; i++) {
     day.push(i);
 }
 
+// creating a year dropdown
 let year = [];
 for (let i = 2020; i > 1900; i--) {
     year.push(i);
 }
 
-// class base
+// displays a form for a user to input their birthday to determine if older enough to enter
+//      if user is not old enough, a message will appear
+//      else user is redirect to the homepage and able to view the app
 class AppEntry extends Component {
     constructor(props) {
         super(props)
@@ -35,7 +38,7 @@ class AppEntry extends Component {
         })
     }
 
-    // date entry check
+    // date entry check to see if user is above age to enter
     dateEntryCheck = (e) => {
         e.preventDefault();
         

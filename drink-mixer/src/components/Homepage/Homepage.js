@@ -6,7 +6,7 @@ import Map from './Map';
 import DrinkOfTheWeek from './DrinkOfTheWeek';
 import Article from './Article';
 
-// class base
+// displays three cards that the user can click through to show spotlight information
 class Homepage extends Component {
     constructor(props){
         super(props);
@@ -18,7 +18,8 @@ class Homepage extends Component {
         }
     }
 
-    changeCard=(direction)=> {
+    // changing the card based on what card is displayed and which button is clicked
+    changeCard = (direction)=> {
         let renderComponent = this.state.renderComponent;
         if( renderComponent === this.state.maxRender && direction === 1) {
             renderComponent = 1;
@@ -41,6 +42,7 @@ class Homepage extends Component {
             })
         }
     }
+    
     render(){
         return (
             <div>

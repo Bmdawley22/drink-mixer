@@ -4,9 +4,11 @@ import React, { Component } from 'react';
 // import Google Maps
 import GoogleMapReact from 'google-map-react';
 
+// import Icon for map-marker
 import { Icon } from '@iconify/react'
 import locationIcon from '@iconify/icons-mdi/map-marker'
 
+// defing the location and text for the map
 const Location = ({ text }) => (
     <div>
         <Icon icon={locationIcon} className="pin-icon" />
@@ -14,7 +16,9 @@ const Location = ({ text }) => (
     </div>
 )
 
-// class base
+// Displaying information about the location and displaying the map
+//      Map is showing information based on the latitude and longitude 
+//      with a pin location and name of place
 class Map extends Component {
     static defaultProps = {
         center: {

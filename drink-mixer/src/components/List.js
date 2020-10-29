@@ -1,6 +1,11 @@
+// import React
 import React from 'react';
+
+// import Link
 import {Link} from 'react-router-dom';
 
+// displaying a list of drinks as a side bar for users to select a drink from
+//      to see additional information on the drink
 function List(props) {
     return (
         <div className='drinksList'>
@@ -22,4 +27,5 @@ function List(props) {
     )
 }
 
+// export List
 export default List;
