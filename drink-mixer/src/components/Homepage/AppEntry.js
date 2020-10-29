@@ -85,7 +85,7 @@ class AppEntry extends Component {
             <div className='appEntry'>
                 <h1>Welcome to Drink Mixer!</h1>
                 <h2>Please enter your birthday to enter website:</h2>
-                <h3>Note: 21 and older ONLY!</h3>
+                <h4>Note: 21 and older ONLY!</h4>
                 <form onSubmit={(e) => this.dateEntryCheck(e)}>
                     <select name='month' onChange={this.dataEntry}>
                         <option defaultValue>Month</option>
@@ -115,9 +115,9 @@ class AppEntry extends Component {
                         })}
 
                     </select>
-                    <input type="submit" value="Enter Drink Mixer" />
+                    <input type='submit' value='Enter Drink Mixer' />
                 </form>
-                {this.state.message.length > 0 && <h3>{this.state.message}</h3>}
+                {this.state.message.length > 0 && <h3 className='entryMessage'>{this.state.message}</h3>}
             </div>
         )
     }
