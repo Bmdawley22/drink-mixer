@@ -66,6 +66,7 @@
 ## Future Additions
 * User Login, Sign Up, and Sign Out of App
 * Create a database to store all drinks
+* Add likes and comments to drinks
 
 ## API Used
 
