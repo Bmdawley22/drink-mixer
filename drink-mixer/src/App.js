@@ -54,7 +54,7 @@ class App extends Component {
       message: '',
       bySpiritActiveDrink: {},
       bySpiritDrinks: [],
-      ageVerified: true,
+      ageVerified: false,
       activePage: 0,
       bySpiritCategory: '',
     }
@@ -62,7 +62,7 @@ class App extends Component {
 
   verifyAge = () => {
     this.setState({
-      ageVerified:true
+      ageVerified: true
     })
   }
 
