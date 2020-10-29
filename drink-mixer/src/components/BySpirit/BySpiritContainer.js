@@ -30,6 +30,7 @@ class BySpiritContainer extends Component {
                     drinks={this.props.drinks} 
                     activeDrinkId={this.state.activeDrinkId}
                     onListClick={this.onListClick}
+                    bySpiritCategory={this.props.bySpiritCategory}
                 />
                 {this.state.activeDrink.strDrink ? 
                     <Show  

@@ -122,6 +122,16 @@ button:hover, .Link:hover {
   justify-content: space-evenly;
 }
 
+.category {
+  text-align: center;
+  margin: 0px;
+  font-size: 25px;
+  background-color: #797A7E;
+  color: white;
+  width: calc(30vw + 10px);
+  margin-left: 10px;
+}
+
 .showDrinkImg {
   width: 35%;
   max-width: 300px;
@@ -190,17 +200,20 @@ button:hover, .Link:hover {
   display: flex;
   flex-flow: row;
   align-items: center;
+  
 }
 
 @media (max-width: 1100px) {
   .listItem {
     flex-flow: column;
     height: 200px;
+    margin-bottom: 10px;
   }
 }
 
 .listItem:hover {
   border: solid #797a7e 3px;
+  padding: 3px;
 }
 
 .listItem h4 {
@@ -219,7 +232,7 @@ button:hover, .Link:hover {
   box-shadow: 0 8px 16px 0 white;
   background: #797a7e;
   margin-left: 10vw;
-  padding-top: 10px;
+  padding: 10px;
   color: white;
   border-radius: 10px;
 }

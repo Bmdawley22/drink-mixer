@@ -55,7 +55,8 @@ class App extends Component {
       bySpiritActiveDrink: {},
       bySpiritDrinks: [],
       ageVerified: true,
-      activePage: 0
+      activePage: 0,
+      bySpiritCategory: '',
     }
   }
 
@@ -79,14 +80,15 @@ class App extends Component {
     const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${cat}`);
     this.setState({ 
       bySpiritDrinks: resp.data.drinks,
-      //bySpiritActiveDrink
+      bySpiritCategory: cat
     })
   }
 
   // setting the spirit drinks array to empty
   resetBySpiritDrinks = () => {
     this.setState({ 
-      bySpiritDrinks: []
+      bySpiritDrinks: [],
+      bySpiritCategory: ''
     })
   }
 
@@ -243,6 +245,7 @@ class App extends Component {
                 bySpiritActiveDrink={this.state.bySpiritActiveDrink}
                 addDrink={this.addDrink} 
                 message={this.state.message}
+                bySpiritCategory={this.state.bySpiritCategory}
               />
             }} />
             <Route exact path='/by-spirit' render={() => {

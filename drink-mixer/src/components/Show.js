@@ -14,6 +14,7 @@ function Show(props) {
     }
     return(
         <div>
+            
             <div className='addDrinkButton'>
                 {props.message !== undefined && <button onClick={() => props.addDrink(props.drink)}>Add Drink</button>}
                 <div className='addDrinkMessage'>
