@@ -10,6 +10,7 @@ for (let i = 1; i < 32; i++) {
     day.push(i);
 }
 
+// creating year dropdown
 let year = [];
 for (let i = 2020; i > 1900; i--) {
     year.push(i);
@@ -37,13 +38,14 @@ class AppEntry extends Component {
 
     // date entry check
     dateEntryCheck = (e) => {
+        // prevent page refresh
         e.preventDefault();
-        
-        console.log(this.state)
 
+        // finding today's date
+        //  defining day, month, year
         const today = new Date();
         let dd = today.getDate();
-        let mm = today.getMonth() + 1 ;
+        let mm = today.getMonth() + 1;
         let yy = today.getFullYear();
 
         if ((yy - this.state.year) > 20) {
