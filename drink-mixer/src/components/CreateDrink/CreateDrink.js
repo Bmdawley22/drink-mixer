@@ -68,8 +68,8 @@ class CreateDrink extends Component {
                         {this.state.ingredientsNum.map((ingredient, id) => {
                             return (
                                 <div>
-                                    <input type='text' name={`strMeasure${id+1}`} placeholder='ingredient'  onChange={this.onChange}/>
-                                    <input type='text' name={`strIngredient${id+1}`} placeholder='amount' onChange={this.onChange}/>
+                                    <input type='text' name={`strMeasure${id+1}`} placeholder='amount'  onChange={this.onChange}/>
+                                    <input type='text' name={`strIngredient${id+1}`} placeholder='ingredient' onChange={this.onChange}/>
                                     <br /> 
                                 </div>
                             )
