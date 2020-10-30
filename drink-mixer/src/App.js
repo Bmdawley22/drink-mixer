@@ -158,8 +158,11 @@ class App extends Component {
     this.props.history.push('/all-drinks');
   }
 
+  // setting state for the active page the user is on
   highlightLink = (page) => {
-    this.setState({ activePage: page });
+    this.setState({ 
+      activePage: page 
+    })
   }
 
   // Random Drink API call
@@ -178,8 +181,6 @@ class App extends Component {
     }
   }
 
-  
-
   async componentDidMount() {
     try {
       const response = await axios(URL);
@@ -194,9 +195,7 @@ class App extends Component {
     }    
   }
 
-
   render () {
-    console.log(this.state.activePage)
     return (
       <div className='App'>
         <Header 
