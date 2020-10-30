@@ -4,9 +4,9 @@ import React from 'react';
 // function base
 const Footer = () => {
     return (
-        <div className="Footer">
-            <a className="issue" href="https://github.com/Bmdawley22/drink-mixer/issues" target="_blank">Report an Issue</a>
-            <footer className="authors">&copy; A. Bonetto, B. Dawley, & T. Kaiser</footer>
+        <div className='Footer'>
+            <a className='issue' href='https://github.com/Bmdawley22/drink-mixer/issues' target='_blank'>Report an Issue</a>
+            <footer className='authors'>&copy; A. Bonetto, B. Dawley, & T. Kaiser</footer>
         </div>
     )
 }

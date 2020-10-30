@@ -1,10 +1,13 @@
-import React from 'react-router-dom';
+// import React
+import React from 'react';
 
+// import List and Show
 import List from '../List';
 import Show from '../Show';
 
+// passing information from List and Show
 function AllDrinkContainer(props) {
-    const index=props.match.params.index;
+    const index = props.match.params.index;
     return(
         <div className='drinkContainer'>
             <List drinks={props.drinks} setActive={props.setActive} activeDrinkId={props.activeDrinkId}/>
@@ -13,4 +16,5 @@ function AllDrinkContainer(props) {
     )
 }
 
+// export AllDrink Container
 export default AllDrinkContainer;

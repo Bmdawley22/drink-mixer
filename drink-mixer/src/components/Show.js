@@ -1,17 +1,22 @@
+// import React
 import React from 'react';
 
+// displaying drink information based on the drink that the user selected
 function Show(props) {
+    // creating a new array for just the ingredients in each drink
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
         const temp=`strIngredient${i}`
         ingredients.push(props.drink[temp])
     }
     
+    // creating a new array for just the measurements in each drink
     let measures =[];
     for (let i = 1; i < 16; i++) {
         const temp=`strMeasure${i}`
         measures.push(props.drink[temp])
     }
+
     return(
         <div>
             
@@ -58,4 +63,5 @@ function Show(props) {
     )
 }
 
+// export Show
 export default Show;

@@ -1,6 +1,12 @@
+// import React
 import React, { Component } from 'react';
+
+// import Link
 import { Link } from 'react-router-dom';
 
+// display all spirits
+//      defining the spirits to choose from
+//      when a spirit is clicked will render a show page to show all drinks that have that spirit
 class BySpirit extends Component {
     constructor(props) {
         super(props);
@@ -47,11 +53,13 @@ class BySpirit extends Component {
         }
     }
 
+    // takes in the spirit clicked on and calls the API
     handleClick = (id) => {
         const category = this.state.categories[id].name;
         this.props.BySpiritCall(category); 
     }
     
+    // resets the array until the API is called
     componentDidMount = () => {
         this.props.resetBySpiritDrinks();
     } 
@@ -84,5 +92,6 @@ class BySpirit extends Component {
     }
 }
 
+// export BySpirit
 export default BySpirit;
 

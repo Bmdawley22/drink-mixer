@@ -1,19 +1,18 @@
+// import React
 import React, { Component} from 'react';
-import {Link} from 'react-router-dom';
-//import axios from 'axios';
 
+// import Link
+import {Link} from 'react-router-dom';
+
+// displaying all drinks
+//     when a drink is clicked will render a show page to show more information
 class AllDrinks extends Component {
     constructor(props){
         super(props);
 
-        this.state={
+        this.state = {
             drinks: props.drinks
         }
-    }
-
-    async componentDidMount() {
-        //const drinks = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php");
-        //console.log(drinks.data);
     }
 
     render(){
@@ -45,4 +44,5 @@ class AllDrinks extends Component {
     }
 }
 
+// export All Drinks
 export default AllDrinks;

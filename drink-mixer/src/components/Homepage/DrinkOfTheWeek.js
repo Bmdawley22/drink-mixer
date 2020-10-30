@@ -1,11 +1,16 @@
+// import React
 import React from 'react';
 
+// import Link
 import {Link} from 'react-router-dom';
 
+// import Icon for stars
 import { Icon } from '@iconify/react'
 import ratingStar from '@iconify/icons-mdi/star';
 import ratingStarHalf from '@iconify/icons-mdi/star-half';
 
+// displaying spotlight drink information on the homepage with a review
+//      redirects user to the drinks showpage to show the directions
 function DrinkOfTheWeek(props) {
     return(
         <div className='homepageCard'>
@@ -27,4 +32,5 @@ function DrinkOfTheWeek(props) {
     )
 }
 
+// export Drink of the Week
 export default DrinkOfTheWeek;

@@ -20,7 +20,6 @@ header h1 {
   font-size: 7vh;
 }
 
-
 .pin-icon {
   height: 50px;
   width: 50px;
@@ -46,7 +45,6 @@ nav {
   align-items: center;
   width: 60vw;
 }
-
 
 nav .Link {
   text-decoration: none;
@@ -94,16 +92,17 @@ button:hover, .Link:hover {
   color: white;
   padding: 15px;
 }
+
 .appEntry img {
   object-fit: contain;
   border-radius: 10px;
   height: 25vh;
 }
+
 .appEntry select, .appEntry input {
   font-size: 20px;
   margin-right: 5px;
 }
-
 
 .entryMessage {
   width: 300px;
@@ -197,8 +196,6 @@ button:hover, .Link:hover {
   display: flex;
   flex-flow: column;
 }
-
-
 
 .drinksList a {
   text-decoration: none;
@@ -461,12 +458,12 @@ h3 {
   overflow-y: auto;
 }
 
-
 .createDrink input, .createDrink span {
   font-size: 25px;
   color: white;
   margin-bottom: 10px;
 }
+
 .createDrink span {
   margin-right: 5px;
   margin-bottom: 10px;
@@ -635,4 +632,3 @@ footer {
   border-radius: 5px;
   font-size: 2.5vh;
 }
-

@@ -1,7 +1,7 @@
 // import React
 import React from 'react';
 
-// function base
+// displaying spotlight article information on the homepage
 const Article = () => {
     return(
         <div className='homepageCard'>

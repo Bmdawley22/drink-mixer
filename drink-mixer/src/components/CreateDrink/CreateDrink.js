@@ -1,12 +1,15 @@
 // import React
 import React, {Component} from 'react';
 
-// class base
+// displays a form for a user to input information on a drink
+//      allows the user to add a drink with up to 15 ingredients and a image
+//      after a drink is added, the user is redirected to the all drinks page 
+//      and the added drink will appear at the end of the list
 class CreateDrink extends Component {
     constructor(props) {
         super(props);
 
-        this.state= {
+        this.state = {
             strDrink: '',
             strDrinkThumb: '',
             strInstructions: '',
@@ -22,6 +25,7 @@ class CreateDrink extends Component {
     }
 
     // adding additional input boxes for the ingredients if needed on button click
+    // removing input boxes for ingredients if not needed on button click
     changeIngredient = (change) => {
         let ingredientsNum = this.state.ingredientsNum;
         if (ingredientsNum.length < 15 && change > 0) {

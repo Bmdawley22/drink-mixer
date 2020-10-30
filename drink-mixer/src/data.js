@@ -1,3 +1,4 @@
+// list of drinks to have when arriving to all drinks page
 const drinks = [{
     dateModified: "2017-01-28 16:34:43",
     idDrink: "15328",
@@ -403,7 +404,7 @@ const drinks = [{
     strMeasure15: null,
     strTags: null,
     strVideo: null,
-}
-]
+}]
 
+// export all drinks
 export default drinks;

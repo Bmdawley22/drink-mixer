@@ -39,9 +39,10 @@ import axios from 'axios';
 // import data for all drinks
 import drinks from './data';
 
+// URL for random drink API
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
-// class base
+// Rendering all pages throughout app and passing information to each respective page
 class App extends Component {
   constructor(props) {
     super(props)
@@ -60,6 +61,7 @@ class App extends Component {
     }
   }
 
+  // setting the state of age verification to only show things once set to true
   verifyAge = () => {
     this.setState({
       ageVerified: true
@@ -146,6 +148,7 @@ class App extends Component {
 
   // creating a new drink and adding to state to be displayed in All Drinks
   createDrink = (e, newDrink) => {
+    // prevent page refresh
     e.preventDefault();
     const drinks = this.state.drinks;
     drinks.push(newDrink);
@@ -165,7 +168,7 @@ class App extends Component {
     })
   }
 
-  // Random Drink API call
+  // Random Drink API call when random drink button is clicked
    randonDrinkCall= async (e) => {
     this.resetMessage()
     try {
@@ -181,6 +184,7 @@ class App extends Component {
     }
   }
 
+  // Random Drink API call for initial page loading
   async componentDidMount() {
     try {
       const response = await axios(URL);
@@ -263,5 +267,5 @@ class App extends Component {
   }
 }
 
+// export App
 export default withRouter(App);
-

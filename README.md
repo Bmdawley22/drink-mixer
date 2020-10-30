@@ -54,6 +54,8 @@
 
 ## App
 
+- **App:** drink-mixer.surge.sh
+
 ## Features
 * Enter App only if 21 and Older
 * Top Spotlight Drink, Tavern, and Article
@@ -127,7 +129,7 @@
 ### Resolution
 * Imported firebase and used .ref to store to data base
     * Result: data was saving to the database; however, having difficulites rendering that data to be used throughout the app
-    * Cause: adding .ref to store directly to the database
+    * Cause: adding .ref to store directly to the database, not able to return data from the database
     * Code Used:
     ```
         import firebase from 'firebase';

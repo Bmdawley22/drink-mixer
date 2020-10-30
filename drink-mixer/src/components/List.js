@@ -1,6 +1,11 @@
+// import React
 import React from 'react';
+
+// import Link
 import {Link} from 'react-router-dom';
 
+// displaying a list of drinks as a side bar for users to select a drink from
+//      to see additional information on the drink
 function List(props) {
     return (
         <div>
@@ -16,7 +21,7 @@ function List(props) {
                             onClick={props.onListClick ? ()=> props.onListClick(id, drink.idDrink) : ()=> props.setActive(id)}
                             key = {id}
                         >
-                            <div className={props.activeDrinkId === id ? "active listItem" : "listItem"}> 
+                            <div className={props.activeDrinkId === id ? 'active listItem' : 'listItem'}> 
                                 <img src={drink.strDrinkThumb} alt='thumbnail' className='thumbnail'/>
                                 <h4>{drink.strDrink}</h4>
                             </div>
@@ -28,4 +33,5 @@ function List(props) {
     )
 }
 
+// export List
 export default List;
